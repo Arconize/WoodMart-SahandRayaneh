@@ -1,0 +1,6 @@
+{
+  "name": "WoodMart Vegetables - Organic Grocery Store",
+  "description": "Full-featured online organic grocery and fresh vegetables supermarket inspired by WoodMart Vegetables.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

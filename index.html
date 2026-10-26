@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WoodMart Vegetables - Organic Grocery Store</title>
+    <meta name="description" content="Full-featured online organic grocery and fresh vegetables supermarket inspired by WoodMart Vegetables." />
+    <meta property="og:title" content="WoodMart Vegetables - Organic Grocery Store" />
+    <meta property="og:description" content="Full-featured online organic grocery and fresh vegetables supermarket inspired by WoodMart Vegetables." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/base.css" />
+    <link rel="stylesheet" href="./src/css/header.css" />
+    <link rel="stylesheet" href="./src/css/home.css" />
+    <link rel="stylesheet" href="./src/css/products.css" />
+    <link rel="stylesheet" href="./src/css/responsive.css" />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-left">
+          <span>🚚 FREE DELIVERY ON ALL ORDERS OVER <strong>$45.00!</strong></span>
+          <span>📞 Hotline: (+800) 1234 5678</span>
+        </div>
+        <div class="top-bar-right">
+          <a href="pages/products.html">Track Order</a>
+          <span>USD ($)</span>
+          <span>English</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="main-header">
+      <div class="container">
+        <button class="mobile-nav-toggle" aria-label="Open mobile menu">☰</button>
+
+        <a href="index.html" class="logo">
+          <div class="logo-leaf">🌿</div>
+          <div>WOOD<span>MART</span></div>
+        </a>
+
+        <div class="search-form-wrapper">
+          <form class="search-form">
+            <select class="search-category-select">
+              <option value="all">All Categories</option>
+              <option value="Vegetables & Fruits">Vegetables & Fruits</option>
+              <option value="Bakery">Bakery</option>
+              <option value="Seafood">Seafood</option>
+              <option value="Vegan Meat">Vegan Meat</option>
+            </select>
+            <input type="text" class="search-input" placeholder="Search organic vegetables, bread, fruits..." autocomplete="off">
+            <button type="submit" class="search-btn">🔍</button>
+          </form>
+          <div class="search-results-dropdown"></div>
+        </div>
+
+        <div class="header-actions">
+          <a href="pages/wishlist.html" class="header-action-btn" title="Wishlist">
+            <div class="action-icon-wrapper">
+              🤍
+              <span class="action-badge action-badge-wishlist wishlist-count-badge">0</span>
+            </div>
+            <div class="action-text">
+              <span class="action-sub">Favorite</span>
+              <span class="action-main">Wishlist</span>
+            </div>
+          </a>
+
+          <button class="header-action-btn header-cart-trigger" title="Cart">
+            <div class="action-icon-wrapper">
+              🛒
+              <span class="action-badge cart-count-badge">0</span>
+            </div>
+            <div class="action-text">
+              <span class="action-sub">Your Cart</span>
+              <span class="action-main cart-subtotal-val">$0.00</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-bar">
+      <div class="container">
+        <div class="categories-dropdown-wrapper">
+          <button class="categories-btn">
+            <span>☰</span>
+            <span>Browse Categories</span>
+            <span>▾</span>
+          </button>
+          <div class="categories-menu">
+            <a href="pages/products.html?cat=Vegetables & Fruits" class="category-menu-item">
+              <span>🥦 Vegetables & Fruits</span>
+              <span class="filter-cat-count">8</span>
+            </a>
+            <a href="pages/products.html?cat=Bakery" class="category-menu-item">
+              <span>🥖 Bakery & Bread</span>
+              <span class="filter-cat-count">3</span>
+            </a>
+            <a href="pages/products.html?cat=Seafood" class="category-menu-item">
+              <span>🐟 Wild Seafood</span>
+              <span class="filter-cat-count">2</span>
+            </a>
+            <a href="pages/products.html?cat=Vegan Meat" class="category-menu-item">
+              <span>🌱 Plant-Based Meat</span>
+              <span class="filter-cat-count">2</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="main-nav">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="pages/products.html" class="nav-link">Shop</a>
+          <a href="pages/products.html?cat=Vegetables & Fruits" class="nav-link">Fresh Vegetables</a>
+          <a href="pages/products.html?cat=Bakery" class="nav-link">Artisan Bakery</a>
+          <a href="pages/products.html?cat=Seafood" class="nav-link">Wild Seafood</a>
+          <a href="pages/products.html?cat=Vegan Meat" class="nav-link">Vegan Meat</a>
+        </div>
+
+        <div class="nav-promo">
+          ⭐ SPECIAL OFFER: 30% OFF ORGANIC HARVEST
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-main-banner">
+              <span class="hero-tag">100% Certified Organic Farm Harvest</span>
+              <h1 class="hero-title">Fresh Vegetables<br><span>Straight From</span> Farm</h1>
+              <p class="hero-desc">
+                Picked early this morning, delivered chilled in eco-crates to your kitchen doorstep in under 2 hours. Pure wholesome nutrition.
+              </p>
+              <div>
+                <a href="pages/products.html" class="btn btn-primary" style="padding: 14px 28px; font-size: 0.95rem;">
+                  Shop Fresh Produce →
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-side-banners">
+              <div class="side-banner side-banner-1">
+                <span class="side-banner-tag">Summer Special</span>
+                <h3 class="side-banner-title">Heirloom Vine Tomatoes</h3>
+                <p class="side-banner-desc">Sweet, succulent, rich in lycopene.</p>
+                <a href="pages/products.html?cat=Vegetables & Fruits" class="btn btn-outline" style="width: fit-content; padding: 6px 14px; font-size: 0.78rem;">
+                  Shop Now →
+                </a>
+              </div>
+
+              <div class="side-banner side-banner-2">
+                <span class="side-banner-tag" style="color: #0284c7;">Wild Harvest</span>
+                <h3 class="side-banner-title">Maine Wild Blueberries</h3>
+                <p class="side-banner-desc">Antioxidant superfood packed with flavor.</p>
+                <a href="pages/products.html?cat=Vegetables & Fruits" class="btn btn-outline" style="width: fit-content; padding: 6px 14px; font-size: 0.78rem;">
+                  Shop Now →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features-bar">
+        <div class="container">
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">🚚</div>
+              <div>
+                <div class="feature-title">Free Delivery</div>
+                <div class="feature-desc">On orders over $45.00</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🌱</div>
+              <div>
+                <div class="feature-title">100% Organic</div>
+                <div class="feature-desc">Certified non-GMO harvest</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🛡️</div>
+              <div>
+                <div class="feature-title">Safe Payment</div>
+                <div class="feature-desc">SSL 256-bit encrypted</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🎧</div>
+              <div>
+                <div class="feature-title">24/7 Support</div>
+                <div class="feature-desc">Dedicated live concierge</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="categories-section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="section-subtitle">Explore WoodMart</span>
+              <h2 class="section-title">Popular Categories</h2>
+            </div>
+            <a href="pages/products.html" class="section-link">View All Categories →</a>
+          </div>
+
+          <div class="category-cards-grid">
+            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Vegetables & Fruits'">
+              <div class="category-card-img">
+                <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=400&q=80" alt="">
+              </div>
+              <div class="category-card-name">Vegetables</div>
+              <div class="category-card-count">8 Products</div>
+            </div>
+
+            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Bakery'">
+              <div class="category-card-img">
+                <img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=400&q=80" alt="">
+              </div>
+              <div class="category-card-name">Artisan Bakery</div>
+              <div class="category-card-count">3 Products</div>
+            </div>
+
+            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Seafood'">
+              <div class="category-card-img">
+                <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=400&q=80" alt="">
+              </div>
+              <div class="category-card-name">Fresh Seafood</div>
+              <div class="category-card-count">2 Products</div>
+            </div>
+
+            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Vegan Meat'">
+              <div class="category-card-img">
+                <img src="https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=400&q=80" alt="">
+              </div>
+              <div class="category-card-name">Vegan Meat</div>
+              <div class="category-card-count">2 Products</div>
+            </div>
+
+            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Vegetables & Fruits'">
+              <div class="category-card-img">
+                <img src="https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?auto=format&fit=crop&w=400&q=80" alt="">
+              </div>
+              <div class="category-card-name">Pasture Eggs</div>
+              <div class="category-card-count">Farm Fresh</div>
+            </div>
+
+            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Vegetables & Fruits'">
+              <div class="category-card-img">
+                <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=400&q=80" alt="">
+              </div>
+              <div class="category-card-name">Cold Juices</div>
+              <div class="category-card-count">Raw Pressed</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deals-section">
+        <div class="container">
+          <div class="deals-box">
+            <div class="deals-header">
+              <div>
+                <span class="section-subtitle" style="color: #d97706;">Limited Time Discounts</span>
+                <h2 class="section-title">Weekly Discounts & Deals</h2>
+              </div>
+              <div class="countdown-timer">
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--text-muted); margin-right: 6px;">Ends in:</span>
+                <div class="timer-box hours-box">14h</div>
+                <span>:</span>
+                <div class="timer-box mins-box">42m</div>
+                <span>:</span>
+                <div class="timer-box secs-box">19s</div>
+              </div>
+            </div>
+
+            <div class="deals-grid featured-deals-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container" style="padding: 32px 20px;">
+        <div class="section-header">
+          <div>
+            <span class="section-subtitle">Our Farm Selection</span>
+            <h2 class="section-title">Featured Products</h2>
+          </div>
+          <div class="tabs-wrapper home-product-tabs">
+            <button class="tab-btn active" data-category="all">All Products</button>
+            <button class="tab-btn" data-category="Vegetables & Fruits">Vegetables & Fruits</button>
+            <button class="tab-btn" data-category="Bakery">Bakery</button>
+            <button class="tab-btn" data-category="Seafood">Seafood</button>
+            <button class="tab-btn" data-category="Vegan Meat">Vegan Meat</button>
+          </div>
+        </div>
+
+        <div class="products-grid home-products-grid"></div>
+      </section>
+
+      <section class="container">
+        <div class="promo-grid">
+          <div class="promo-banner promo-banner-1">
+            <span class="hero-tag">Cold Pressed</span>
+            <h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 8px;">Greek Organic Olive Oil</h3>
+            <p style="font-size: 0.85rem; color: #d1fae5; margin-bottom: 20px;">Single estate Koroneiki extra virgin olive oil with less than 0.2% acidity.</p>
+            <a href="pages/products.html" class="btn btn-primary" style="width: fit-content;">Shop Virgin Oils →</a>
+          </div>
+
+          <div class="promo-banner promo-banner-2">
+            <span class="hero-tag" style="color: #f59e0b;">Freshly Baked Daily</span>
+            <h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 8px;">Wild Sourdough Country Loaf</h3>
+            <p style="font-size: 0.85rem; color: #fef3c7; margin-bottom: 20px;">Slow-fermented for 36 hours with non-GMO organic stoneground flour.</p>
+            <a href="pages/products.html?cat=Bakery" class="btn btn-primary" style="background-color: #d97706; width: fit-content;">Shop Bakery →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="newsletter-box">
+          <div>
+            <span class="hero-tag">Weekly Harvest Club</span>
+            <h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 6px;">Get $15 Off Your First Organic Basket!</h3>
+            <p style="font-size: 0.85rem; color: #d1fae5;">Subscribe for seasonal recipes, harvest alerts, and instant discount vouchers.</p>
+          </div>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); try { navigator.clipboard?.writeText('WOODMART15'); } catch(_) {} if (window.WoodMartStorage) { window.WoodMartStorage.showToast('Coupon code WOODMART15 copied to clipboard!'); } else { console.log('Coupon code WOODMART15'); } this.reset();">
+            <input type="email" required placeholder="Enter your email address..." class="newsletter-input">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="logo" style="color: #ffffff; margin-bottom: 14px;">
+              <div class="logo-leaf">🌿</div>
+              <div>WOOD<span>MART</span></div>
+            </div>
+            <p style="font-size: 0.82rem; line-height: 1.7; margin-bottom: 16px;">
+              Your neighborhood certified organic grocery store. Direct partnerships with regenerative regional farms to guarantee uncompromised quality and absolute farm freshness.
+            </p>
+            <div style="font-size: 0.8rem; line-height: 1.8;">
+              <div>📍 742 Evergreen Orchard Way, Valley Green, CA</div>
+              <div>📞 (+800) 1234 5678 (24/7 Customer Care)</div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="pages/products.html">All Products</a></li>
+              <li><a href="pages/cart.html">Shopping Cart</a></li>
+              <li><a href="pages/wishlist.html">Wishlist</a></li>
+              <li><a href="pages/products.html?cat=Vegetables & Fruits">Fresh Vegetables</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Categories</h4>
+            <ul class="footer-links">
+              <li><a href="pages/products.html?cat=Vegetables & Fruits">Vegetables & Fruits</a></li>
+              <li><a href="pages/products.html?cat=Bakery">Bakery & Bread</a></li>
+              <li><a href="pages/products.html?cat=Seafood">Wild Seafood</a></li>
+              <li><a href="pages/products.html?cat=Vegan Meat">Plant-Based Meat</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Certified Organic</h4>
+            <div style="font-size: 0.82rem; line-height: 1.7;">
+              <p style="margin-bottom: 10px;">✓ 100% USDA Certified Organic</p>
+              <p style="margin-bottom: 10px;">✓ Non-GMO Project Verified</p>
+              <p>✓ Temperature-controlled cold chain dispatch</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 WoodMart Vegetables. All Rights Reserved.</div>
+          <div style="display: flex; gap: 12px;">
+            <span>VISA</span>
+            <span>Mastercard</span>
+            <span>PayPal</span>
+            <span>Apple Pay</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="cart-drawer-overlay"></div>
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h3 class="cart-drawer-title">Shopping Cart</h3>
+        <button class="cart-drawer-close">✕</button>
+      </div>
+      <div class="cart-drawer-items"></div>
+      <div class="cart-drawer-footer">
+        <div class="drawer-subtotal">
+          <span>Subtotal:</span>
+          <span class="drawer-subtotal-val price">$0.00</span>
+        </div>
+        <div class="drawer-buttons">
+          <a href="pages/cart.html" class="btn btn-outline" style="text-align: center;">View Cart</a>
+          <a href="pages/cart.html" class="btn btn-primary" style="text-align: center;">Checkout →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-menu-drawer">
+      <div class="mobile-menu-header">
+        <div class="logo">
+          <div class="logo-leaf">🌿</div>
+          <div>WOOD<span>MART</span></div>
+        </div>
+        <button class="mobile-menu-close">✕</button>
+      </div>
+      <ul class="mobile-menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/products.html">All Shop Products</a></li>
+        <li><a href="pages/products.html?cat=Vegetables & Fruits">Vegetables & Fruits</a></li>
+        <li><a href="pages/products.html?cat=Bakery">Bakery</a></li>
+        <li><a href="pages/products.html?cat=Seafood">Seafood</a></li>
+        <li><a href="pages/products.html?cat=Vegan Meat">Vegan Meat</a></li>
+        <li><a href="pages/wishlist.html">Wishlist</a></li>
+        <li><a href="pages/cart.html">Shopping Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="mobile-bottom-bar">
+      <div class="mobile-bottom-bar-inner">
+        <a href="index.html" class="mobile-bar-btn active">
+          <span class="icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="pages/products.html" class="mobile-bar-btn">
+          <span class="icon">🔍</span>
+          <span>Shop</span>
+        </a>
+        <a href="pages/wishlist.html" class="mobile-bar-btn">
+          <span class="icon">🤍</span>
+          <span>Wishlist</span>
+        </a>
+        <button class="mobile-bar-btn header-cart-trigger">
+          <span class="icon">🛒</span>
+          <span>Cart</span>
+        </button>
+      </div>
+    </div>
+
+    <script type="module">
+      import { Storage } from './src/js/storage.js';
+      import { Cart } from './src/js/cart.js';
+      import { Wishlist } from './src/js/wishlist.js';
+      import { Search } from './src/js/search.js';
+      import { Menu } from './src/js/menu.js';
+      import { ProductsRenderer } from './src/js/products.js';
+      import { PRODUCTS } from './src/data/products.js';
+
+      window.WoodMartStorage = Storage;
+
+      function initHome() {
+        Cart.init();
+        Wishlist.init();
+        Menu.init();
+
+        try {
+          const products = PRODUCTS;
+
+          Search.init(products);
+
+          const gridContainer = document.querySelector('.home-products-grid');
+          ProductsRenderer.renderGrid(gridContainer, products.slice(0, 8));
+
+          const tabs = document.querySelectorAll('.home-product-tabs .tab-btn');
+          tabs.forEach(btn => {
+            btn.addEventListener('click', () => {
+              tabs.forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
+              const cat = btn.dataset.category;
+              const filtered = cat === 'all' ? products : products.filter(p => p.category === cat);
+              ProductsRenderer.renderGrid(gridContainer, filtered.slice(0, 8));
+            });
+          });
+
+          const dealsContainer = document.querySelector('.featured-deals-grid');
+          if (dealsContainer) {
+            const onSale = products.filter(p => p.oldPrice).slice(0, 2);
+            dealsContainer.innerHTML = onSale.map(p => `
+              <div class="deal-card" onclick="window.location.href='pages/product.html?id=${p.id}'" style="cursor: pointer;">
+                <img src="${p.images[0]}" alt="${p.name}">
+                <div class="deal-card-content">
+                  <div>
+                    <span style="font-size: 0.72rem; color: var(--text-light); text-transform: uppercase;">${p.category}</span>
+                    <h3 style="font-size: 1.1rem; font-weight: 800; margin: 4px 0 8px 0;">${p.name}</h3>
+                    <div class="stars">${'★'.repeat(Math.floor(p.rating))} <span style="font-size: 0.75rem; color: var(--text-light);">(${p.reviewCount})</span></div>
+                    <div style="margin: 10px 0;">
+                      <span class="price">$${p.price.toFixed(2)}</span>
+                      <span class="price-old">$${p.oldPrice.toFixed(2)}</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-bar-fill" style="width: 70%;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
+                      <span>Already Sold: <strong>68</strong></span>
+                      <span>Available: <strong style="color: var(--primary);">${p.stock}</strong></span>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" onclick="event.stopPropagation(); window.WoodMartCart.addItem(window.WoodMartProducts.find(x => x.id === ${p.id}), 1);" style="margin-top: 14px;">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            `).join('');
+
+            window.WoodMartProducts = products;
+            window.WoodMartCart = Cart;
+          }
+
+          let h = 14, m = 42, s = 19;
+          setInterval(() => {
+            if (s > 0) s--;
+            else if (m > 0) { m--; s = 59; }
+            else if (h > 0) { h--; m = 59; s = 59; }
+            const hBox = document.querySelector('.hours-box');
+            const mBox = document.querySelector('.mins-box');
+            const sBox = document.querySelector('.secs-box');
+            if (hBox) hBox.textContent = `${h}h`;
+            if (mBox) mBox.textContent = `${m}m`;
+            if (sBox) sBox.textContent = `${s}s`;
+          }, 1000);
+
+        } catch (e) {
+          console.error('Failed to initialize home page', e);
+        }
+      }
+
+      initHome();
+    </script>
+  </body>
+</html>

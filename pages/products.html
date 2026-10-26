@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Organic Produce - WoodMart Vegetables</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/base.css" />
+    <link rel="stylesheet" href="../src/css/header.css" />
+    <link rel="stylesheet" href="../src/css/products.css" />
+    <link rel="stylesheet" href="../src/css/responsive.css" />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-left">
+          <span>🚚 FREE DELIVERY ON ALL ORDERS OVER <strong>$45.00!</strong></span>
+          <span>📞 Hotline: (+800) 1234 5678</span>
+        </div>
+        <div class="top-bar-right">
+          <a href="../index.html">Home</a>
+          <span>USD ($)</span>
+          <span>English</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="main-header">
+      <div class="container">
+        <button class="mobile-nav-toggle" aria-label="Open mobile menu">☰</button>
+
+        <a href="../index.html" class="logo">
+          <div class="logo-leaf">🌿</div>
+          <div>WOOD<span>MART</span></div>
+        </a>
+
+        <div class="search-form-wrapper">
+          <form class="search-form">
+            <select class="search-category-select">
+              <option value="all">All Categories</option>
+              <option value="Vegetables & Fruits">Vegetables & Fruits</option>
+              <option value="Bakery">Bakery</option>
+              <option value="Seafood">Seafood</option>
+              <option value="Vegan Meat">Vegan Meat</option>
+            </select>
+            <input type="text" class="search-input" placeholder="Search organic vegetables, bread, fruits..." autocomplete="off">
+            <button type="submit" class="search-btn">🔍</button>
+          </form>
+          <div class="search-results-dropdown"></div>
+        </div>
+
+        <div class="header-actions">
+          <a href="wishlist.html" class="header-action-btn" title="Wishlist">
+            <div class="action-icon-wrapper">
+              🤍
+              <span class="action-badge action-badge-wishlist wishlist-count-badge">0</span>
+            </div>
+            <div class="action-text">
+              <span class="action-sub">Favorite</span>
+              <span class="action-main">Wishlist</span>
+            </div>
+          </a>
+
+          <button class="header-action-btn header-cart-trigger" title="Cart">
+            <div class="action-icon-wrapper">
+              🛒
+              <span class="action-badge cart-count-badge">0</span>
+            </div>
+            <div class="action-text">
+              <span class="action-sub">Your Cart</span>
+              <span class="action-main cart-subtotal-val">$0.00</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <span class="current">Shop Organic Produce</span>
+      </div>
+
+      <div class="shop-layout">
+        <aside class="shop-sidebar">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="font-size: 1rem; font-weight: 800; text-transform: uppercase;">Filters</h3>
+            <button class="reset-filters-btn" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Reset All</button>
+          </div>
+
+          <div class="filter-group">
+            <h4 class="filter-title">Categories</h4>
+            <ul class="filter-categories-list">
+              <li>
+                <button class="filter-cat-btn active" data-category="all">
+                  <span>All Produce</span>
+                  <span class="filter-cat-count">18</span>
+                </button>
+              </li>
+              <li>
+                <button class="filter-cat-btn" data-category="Vegetables & Fruits">
+                  <span>Vegetables & Fruits</span>
+                  <span class="filter-cat-count">8</span>
+                </button>
+              </li>
+              <li>
+                <button class="filter-cat-btn" data-category="Bakery">
+                  <span>Bakery & Bread</span>
+                  <span class="filter-cat-count">3</span>
+                </button>
+              </li>
+              <li>
+                <button class="filter-cat-btn" data-category="Seafood">
+                  <span>Wild Seafood</span>
+                  <span class="filter-cat-count">2</span>
+                </button>
+              </li>
+              <li>
+                <button class="filter-cat-btn" data-category="Vegan Meat">
+                  <span>Plant-Based Meat</span>
+                  <span class="filter-cat-count">2</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="filter-group">
+            <h4 class="filter-title">Max Price</h4>
+            <div class="price-slider-wrapper">
+              <input type="range" min="2" max="20" step="0.5" value="20" class="price-range-slider">
+              <div class="price-range-values">
+                <span>$2.00</span>
+                <span class="current-max-price" style="font-weight: 700; color: var(--primary);">$20.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4 class="filter-title">Stock & Status</h4>
+            <label class="checkbox-label">
+              <input type="checkbox" id="filter-in-stock">
+              <span>In Stock Only</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="filter-on-sale">
+              <span>On Sale / Discounted</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="filter-organic">
+              <span>100% Certified Organic</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="filter-vegan">
+              <span>Vegan / Plant-Based</span>
+            </label>
+          </div>
+
+          <div class="filter-group">
+            <h4 class="filter-title">Weight / Packaging</h4>
+            <div class="weights-cloud">
+              <button class="weight-btn" data-weight="1kg">1kg</button>
+              <button class="weight-btn" data-weight="500g">500g</button>
+              <button class="weight-btn" data-weight="250g">250g</button>
+              <button class="weight-btn" data-weight="Pack">Pack</button>
+              <button class="weight-btn" data-weight="350g">350g</button>
+              <button class="weight-btn" data-weight="750g">750g</button>
+            </div>
+          </div>
+        </aside>
+
+        <section class="shop-main-content">
+          <div class="shop-toolbar">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <button class="btn btn-outline mobile-filter-toggle-btn" style="display: none; padding: 6px 12px; font-size: 0.78rem;">
+                ⚙️ Filters
+              </button>
+              <div class="shop-result-count">Loading products...</div>
+            </div>
+
+            <div class="shop-toolbar-actions">
+              <select class="sort-select">
+                <option value="featured">Sort by: Featured</option>
+                <option value="rating">Sort by: Highest Rated</option>
+                <option value="price-asc">Sort by: Price: Low to High</option>
+                <option value="price-desc">Sort by: Price: High to Low</option>
+              </select>
+
+              <div class="view-switcher">
+                <button class="view-btn view-grid-btn active" title="Grid View">⊞</button>
+                <button class="view-btn view-list-btn" title="List View">☰</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="products-grid"></div>
+
+          <div class="load-more-container">
+            <button class="btn btn-outline load-more-btn" style="padding: 12px 32px; font-size: 0.88rem;">
+              Load More Products
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <div>© 2026 WoodMart Vegetables. All Rights Reserved.</div>
+          <div style="display: flex; gap: 12px;">
+            <span>VISA</span>
+            <span>Mastercard</span>
+            <span>PayPal</span>
+            <span>Apple Pay</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="cart-drawer-overlay"></div>
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h3 class="cart-drawer-title">Shopping Cart</h3>
+        <button class="cart-drawer-close">✕</button>
+      </div>
+      <div class="cart-drawer-items"></div>
+      <div class="cart-drawer-footer">
+        <div class="drawer-subtotal">
+          <span>Subtotal:</span>
+          <span class="drawer-subtotal-val price">$0.00</span>
+        </div>
+        <div class="drawer-buttons">
+          <a href="cart.html" class="btn btn-outline" style="text-align: center;">View Cart</a>
+          <a href="cart.html" class="btn btn-primary" style="text-align: center;">Checkout →</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { Cart } from '../src/js/cart.js';
+      import { Wishlist } from '../src/js/wishlist.js';
+      import { Search } from '../src/js/search.js';
+      import { Menu } from '../src/js/menu.js';
+      import { Filters } from '../src/js/filters.js';
+      import { PRODUCTS } from '../src/data/products.js';
+
+      function initShop() {
+        Cart.init();
+        Wishlist.init();
+        Menu.init();
+
+        Search.init(PRODUCTS);
+        Filters.init(PRODUCTS);
+      }
+
+      initShop();
+    </script>
+  </body>
+</html>

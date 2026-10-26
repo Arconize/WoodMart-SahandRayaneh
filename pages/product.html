@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organic Farm Product - WoodMart Vegetables</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/base.css" />
+    <link rel="stylesheet" href="../src/css/header.css" />
+    <link rel="stylesheet" href="../src/css/products.css" />
+    <link rel="stylesheet" href="../src/css/product-detail.css" />
+    <link rel="stylesheet" href="../src/css/responsive.css" />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-left">
+          <span>🚚 FREE DELIVERY ON ALL ORDERS OVER <strong>$45.00!</strong></span>
+          <span>📞 Hotline: (+800) 1234 5678</span>
+        </div>
+        <div class="top-bar-right">
+          <a href="../index.html">Home</a>
+          <span>USD ($)</span>
+          <span>English</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="main-header">
+      <div class="container">
+        <button class="mobile-nav-toggle" aria-label="Open mobile menu">☰</button>
+
+        <a href="../index.html" class="logo">
+          <div class="logo-leaf">🌿</div>
+          <div>WOOD<span>MART</span></div>
+        </a>
+
+        <div class="search-form-wrapper">
+          <form class="search-form">
+            <select class="search-category-select">
+              <option value="all">All Categories</option>
+              <option value="Vegetables & Fruits">Vegetables & Fruits</option>
+              <option value="Bakery">Bakery</option>
+              <option value="Seafood">Seafood</option>
+              <option value="Vegan Meat">Vegan Meat</option>
+            </select>
+            <input type="text" class="search-input" placeholder="Search organic vegetables, bread, fruits..." autocomplete="off">
+            <button type="submit" class="search-btn">🔍</button>
+          </form>
+          <div class="search-results-dropdown"></div>
+        </div>
+
+        <div class="header-actions">
+          <a href="wishlist.html" class="header-action-btn" title="Wishlist">
+            <div class="action-icon-wrapper">
+              🤍
+              <span class="action-badge action-badge-wishlist wishlist-count-badge">0</span>
+            </div>
+            <div class="action-text">
+              <span class="action-sub">Favorite</span>
+              <span class="action-main">Wishlist</span>
+            </div>
+          </a>
+
+          <button class="header-action-btn header-cart-trigger" title="Cart">
+            <div class="action-icon-wrapper">
+              🛒
+              <span class="action-badge cart-count-badge">0</span>
+            </div>
+            <div class="action-text">
+              <span class="action-sub">Your Cart</span>
+              <span class="action-main cart-subtotal-val">$0.00</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="products.html" class="detail-breadcrumb-cat">Shop</a>
+        <span>/</span>
+        <span class="current detail-breadcrumb-title">Product Details</span>
+      </div>
+
+      <div class="detail-layout">
+        <div class="gallery-wrapper">
+          <div class="main-image-container">
+            <img class="detail-main-img" src="" alt="Organic Product">
+          </div>
+          <div class="thumbnails-row"></div>
+        </div>
+
+        <div class="detail-info">
+          <span class="detail-category detail-product-category">Category</span>
+          <h1 class="detail-title detail-product-title">Product Name</h1>
+
+          <div class="detail-rating">
+            <span class="stars">★★★★★</span>
+            <span>(4.8 out of 5 based on verified farm customer reviews)</span>
+          </div>
+
+          <div class="detail-price-box">
+            <span class="price detail-price-val">$0.00</span>
+            <span class="price-old detail-old-price-val"></span>
+            <span class="badge badge-organic detail-weight-badge" style="margin-left: auto;">Weight: 1kg</span>
+          </div>
+
+          <p class="detail-desc detail-product-desc"></p>
+
+          <div class="detail-meta-table">
+            <div class="detail-meta-row">
+              <span class="detail-meta-label">Stock Status:</span>
+              <span class="detail-meta-val detail-stock-val" style="color: var(--primary);">In Stock</span>
+            </div>
+            <div class="detail-meta-row">
+              <span class="detail-meta-label">SKU:</span>
+              <span class="detail-meta-val detail-sku-val"></span>
+            </div>
+            <div class="detail-meta-row">
+              <span class="detail-meta-label">Farm Origin:</span>
+              <span class="detail-meta-val detail-origin-val"></span>
+            </div>
+            <div class="detail-meta-row">
+              <span class="detail-meta-label">Shelf Life:</span>
+              <span class="detail-meta-val detail-shelf-val"></span>
+            </div>
+          </div>
+
+          <div class="detail-actions">
+            <div class="detail-qty">
+              <button class="detail-qty-minus">-</button>
+              <span class="detail-qty-span">1</span>
+              <button class="detail-qty-plus">+</button>
+            </div>
+            <button class="btn-add-cart-lg detail-add-cart-btn">
+              🛒 Add to Cart
+            </button>
+            <button class="btn-wishlist-lg detail-wishlist-btn" title="Add to Wishlist">
+              🤍
+            </button>
+          </div>
+
+          <div class="detail-perks">
+            <div>🚚 Same-day dispatch</div>
+            <div>🌱 100% Certified Organic</div>
+            <div>🔄 24-hr fresh guarantee</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="frequently-bought">
+        <h3 class="frequently-bought-title">Frequently Bought Together (Save 10%)</h3>
+        <div class="frequently-bought-bundle"></div>
+      </div>
+
+      <div class="detail-tabs-section">
+        <div class="detail-tabs-nav">
+          <button class="detail-tab-btn active" data-tab="tab-description">Description</button>
+          <button class="detail-tab-btn" data-tab="tab-nutrition">Nutrition Facts</button>
+          <button class="detail-tab-btn" data-tab="tab-reviews">Customer Reviews</button>
+          <button class="detail-tab-btn" data-tab="tab-shipping">Delivery & Returns</button>
+        </div>
+
+        <div class="detail-tab-content">
+          <div id="tab-description" class="tab-panel">
+            <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px;">Farm Harvest Story & Storage</h4>
+            <p style="margin-bottom: 16px;">
+              Our organic vegetables and artisan produce are grown without synthetic fertilizers or chemical pesticides. Sourced directly from local certified organic growers who practice soil restoration and regenerative farming.
+            </p>
+            <div style="background: #f9fafb; padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <strong style="color: var(--text-main);">Pro Storage Advice:</strong> Keep refrigerated loosely wrapped in breathable crisper bags. Consume within shelf-life recommendation for peak flavor and crisp crunch.
+            </div>
+          </div>
+
+          <div id="tab-nutrition" class="tab-panel" style="display: none;">
+            <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 16px;">Verified Nutritional Profile</h4>
+            <table class="nutrition-table">
+              <tr>
+                <td><strong>Energy / Calories</strong></td>
+                <td>25 - 65 kcal / 100g</td>
+              </tr>
+              <tr>
+                <td><strong>Dietary Fiber</strong></td>
+                <td>High in natural prebiotic fiber</td>
+              </tr>
+              <tr>
+                <td><strong>Micronutrients</strong></td>
+                <td style="color: var(--primary); font-weight: 700;">Vitamin C, Vitamin K, Folate, Potassium</td>
+              </tr>
+              <tr>
+                <td><strong>Pesticide Residue</strong></td>
+                <td>0.00% (Certified Non-GMO & Organic)</td>
+              </tr>
+            </table>
+          </div>
+
+          <div id="tab-reviews" class="tab-panel" style="display: none;">
+            <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 20px;">Customer Reviews</h4>
+            <div class="reviews-list">
+              <div class="review-item">
+                <div class="review-author-row">
+                  <span class="review-author">Sarah Jenkins <span class="badge badge-organic" style="margin-left: 6px;">Verified Buyer</span></span>
+                  <span style="font-size: 0.75rem; color: var(--text-light);">2 days ago</span>
+                </div>
+                <div class="stars" style="margin-bottom: 6px;">★★★★★</div>
+                <p style="font-size: 0.85rem; color: #4b5563;">Incredibly fresh! You can literally smell the earth and sun. Arrived ice-cold in recyclable packaging.</p>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-color); padding-top: 24px; margin-top: 24px;">
+              <h5 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 14px;">Leave a Verified Review</h5>
+              <form class="add-review-form" style="max-width: 480px; display: flex; flex-direction: column; gap: 12px;">
+                <input type="text" id="review-author" required placeholder="Your full name" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                <select id="review-rating" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                  <option value="5">★★★★★ (5 - Excellent)</option>
+                  <option value="4">★★★★☆ (4 - Good)</option>
+                  <option value="3">★★★☆☆ (3 - Average)</option>
+                </select>
+                <textarea id="review-comment" required rows="3" placeholder="Share your experience with freshness, flavor, and delivery..." style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-md);"></textarea>
+                <button type="submit" class="btn btn-primary" style="width: fit-content;">Submit Review</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="tab-shipping" class="tab-panel" style="display: none;">
+            <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px;">Cold Chain Transport Policy</h4>
+            <p style="margin-bottom: 10px;">
+              Every parcel is packed with reusable biodegradable gel packs inside insulated moisture-resistant crates to preserve cold chain integrity at 2°C - 4°C.
+            </p>
+            <p>
+              Free delivery applies to all baskets exceeding $45.00 automatically. Same-day morning harvest dispatch for orders before 11:00 AM.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 60px;">
+        <div class="section-header">
+          <h2 class="section-title">Related Products</h2>
+          <a href="products.html" class="section-link">View More →</a>
+        </div>
+        <div class="products-grid related-products-grid"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <div>© 2026 WoodMart Vegetables. All Rights Reserved.</div>
+          <div style="display: flex; gap: 12px;">
+            <span>VISA</span>
+            <span>Mastercard</span>
+            <span>PayPal</span>
+            <span>Apple Pay</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="cart-drawer-overlay"></div>
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h3 class="cart-drawer-title">Shopping Cart</h3>
+        <button class="cart-drawer-close">✕</button>
+      </div>
+      <div class="cart-drawer-items"></div>
+      <div class="cart-drawer-footer">
+        <div class="drawer-subtotal">
+          <span>Subtotal:</span>
+          <span class="drawer-subtotal-val price">$0.00</span>
+        </div>
+        <div class="drawer-buttons">
+          <a href="cart.html" class="btn btn-outline" style="text-align: center;">View Cart</a>
+          <a href="cart.html" class="btn btn-primary" style="text-align: center;">Checkout →</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { Cart } from '../src/js/cart.js';
+      import { Wishlist } from '../src/js/wishlist.js';
+      import { Search } from '../src/js/search.js';
+      import { Menu } from '../src/js/menu.js';
+      import { ProductsRenderer } from '../src/js/products.js';
+      import { PRODUCTS } from '../src/data/products.js';
+
+      function initProductDetail() {
+        Cart.init();
+        Wishlist.init();
+        Menu.init();
+
+        Search.init(PRODUCTS);
+        ProductsRenderer.renderDetailPage(PRODUCTS);
+      }
+
+      initProductDetail();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Wishlist - WoodMart Vegetables</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/base.css" />
+    <link rel="stylesheet" href="../src/css/header.css" />
+    <link rel="stylesheet" href="../src/css/cart.css" />
+    <link rel="stylesheet" href="../src/css/responsive.css" />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-left">
+          <span>🚚 FREE DELIVERY ON ALL ORDERS OVER <strong>$45.00!</strong></span>
+          <span>📞 Hotline: (+800) 1234 5678</span>
+        </div>
+        <div class="top-bar-right">
+          <a href="../index.html">Home</a>
+          <span>USD ($)</span>
+          <span>English</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="main-header">
+      <div class="container">
+        <button class="mobile-nav-toggle" aria-label="Open mobile menu">☰</button>
+
+        <a href="../index.html" class="logo">
+          <div class="logo-leaf">🌿</div>
+          <div>WOOD<span>MART</span></div>
+        </a>
+
+        <div class="header-actions" style="margin-left: auto;">
+          <a href="wishlist.html" class="header-action-btn" title="Wishlist">
+            <div class="action-icon-wrapper">
+              🤍
+              <span class="action-badge action-badge-wishlist wishlist-count-badge">0</span>
+            </div>
+            <div class="action-text">
+              <span class="action-sub">Favorite</span>
+              <span class="action-main">Wishlist</span>
+            </div>
+          </a>
+
+          <button class="header-action-btn header-cart-trigger" title="Cart">
+            <div class="action-icon-wrapper">
+              🛒
+              <span class="action-badge cart-count-badge">0</span>
+            </div>
+            <div class="action-text">
+              <span class="action-sub">Your Cart</span>
+              <span class="action-main cart-subtotal-val">$0.00</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <span class="current">My Wishlist</span>
+      </div>
+
+      <div class="wishlist-empty-message empty-state" style="display: none;">
+        <div class="empty-state-icon" style="color: var(--sale-badge);">🤍</div>
+        <h2 class="empty-state-title">Your Wishlist is Empty</h2>
+        <p class="empty-state-text">Explore our shop and save your favorite fresh vegetables and artisan produce for later.</p>
+        <a href="products.html" class="btn btn-primary" style="padding: 12px 28px;">Explore Shop →</a>
+      </div>
+
+      <div class="wishlist-content-wrapper" style="padding: 24px 0 60px 0;">
+        <div class="cart-table-wrapper">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Unit Price</th>
+                <th>Stock Status</th>
+                <th style="text-align: right;">Action</th>
+              </tr>
+            </thead>
+            <tbody class="wishlist-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <div>© 2026 WoodMart Vegetables. All Rights Reserved.</div>
+          <div style="display: flex; gap: 12px;">
+            <span>VISA</span>
+            <span>Mastercard</span>
+            <span>PayPal</span>
+            <span>Apple Pay</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="cart-drawer-overlay"></div>
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h3 class="cart-drawer-title">Shopping Cart</h3>
+        <button class="cart-drawer-close">✕</button>
+      </div>
+      <div class="cart-drawer-items"></div>
+      <div class="cart-drawer-footer">
+        <div class="drawer-subtotal">
+          <span>Subtotal:</span>
+          <span class="drawer-subtotal-val price">$0.00</span>
+        </div>
+        <div class="drawer-buttons">
+          <a href="cart.html" class="btn btn-outline" style="text-align: center;">View Cart</a>
+          <a href="cart.html" class="btn btn-primary" style="text-align: center;">Checkout →</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { Cart } from '../src/js/cart.js';
+      import { Wishlist } from '../src/js/wishlist.js';
+      import { Menu } from '../src/js/menu.js';
+
+      Cart.init();
+      Wishlist.init();
+      Menu.init();
+    </script>
+  </body>
+</html>
