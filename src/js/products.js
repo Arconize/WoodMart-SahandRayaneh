@@ -5,62 +5,71 @@ import { Storage } from './storage.js';
 export const ProductsRenderer = {
   createCard(product, layout = 'grid') {
     const isFavorited = Wishlist.isWishlisted(product.id);
-    const discountPercent = product.oldPrice
-      ? Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)
-      : null;
-
     const inPagesDir = window.location.pathname.includes('/pages/');
     const detailUrl = inPagesDir ? `product.html?id=${product.id}` : `pages/product.html?id=${product.id}`;
 
+    const badgeList = Array.isArray(product.badges) && product.badges.length > 0
+      ? product.badges
+      : (product.badge ? [product.badge] : []);
+
+    const badgesHtml = badgeList.map(b => {
+      const isHot = b.toUpperCase() === 'HOT';
+      const cls = isHot ? 'badge badge-hot' : 'badge badge-discount';
+      return `<span class="${cls}">${b}</span>`;
+    }).join('');
+
+    const dietaryList = Array.isArray(product.dietary) ? product.dietary : ['gf', 'vegan'];
+    const dietaryHtml = dietaryList.map(d => {
+      if (d === 'gf') return `<span class="diet-circle" title="Gluten Free">GF</span>`;
+      if (d === 'kosher') return `<span class="diet-circle" title="Kosher">U</span>`;
+      if (d === 'vegan') return `<span class="diet-leaf" title="Vegan">🌱</span>`;
+      return '';
+    }).join('');
+
+    const heartSvg = isFavorited
+      ? `<svg width="17" height="17" viewBox="0 0 24 24" fill="#bc473b" stroke="#bc473b" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`
+      : `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`;
+
     return `
-      <div class="product-card" data-id="${product.id}" style="${layout === 'list' ? 'display: flex; flex-direction: row; align-items: center;' : ''}">
-        <div class="product-thumb-wrapper" style="${layout === 'list' ? 'width: 180px; flex-shrink: 0;' : ''}">
+      <div class="product-card" data-id="${product.id}" style="${layout === 'list' ? 'display: flex; flex-direction: row; align-items: center; gap: 20px;' : ''}">
+        <div class="product-badges">${badgesHtml}</div>
+        <button class="card-wishlist-btn wishlist-btn ${isFavorited ? 'favorited' : ''}" data-action="wishlist" title="Add to Wishlist">
+          ${heartSvg}
+        </button>
+
+        <div class="product-thumb-wrapper" style="${layout === 'list' ? 'width: 160px; flex-shrink: 0; margin-bottom: 0;' : ''}">
           <a href="${detailUrl}">
             <img src="${product.images[0]}" alt="${product.name}" loading="lazy">
           </a>
-          <div class="product-badges">
-            ${product.badge ? `<span class="badge badge-sale">${product.badge}</span>` : ''}
-            ${discountPercent ? `<span class="badge badge-sale">-${discountPercent}%</span>` : ''}
-          </div>
-          <div class="product-hover-actions">
-            <button class="product-action-btn wishlist-btn ${isFavorited ? 'favorited' : ''}" data-action="wishlist" title="Wishlist">
-              ${isFavorited ? '❤️' : '🤍'}
-            </button>
-            <button class="product-action-btn quick-view-btn" data-action="quickview" title="Quick View">
-              👁️
-            </button>
-          </div>
         </div>
 
-        <div class="product-details">
-          <div class="product-meta-row">
-            <span>${product.category}</span>
-            <span>${product.weight}</span>
+        <div class="product-details" style="${layout === 'list' ? 'flex: 1;' : ''}">
+          <div class="product-title-row">
+            <a href="${detailUrl}" class="product-title">${product.name}</a>
+            <div class="dietary-icons">${dietaryHtml}</div>
           </div>
 
-          <a href="${detailUrl}" class="product-title">${product.name}</a>
-
-          <div class="product-rating-row">
-            <span class="stars">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}</span>
-            <span>(${product.reviewCount})</span>
-          </div>
-
-          <div class="product-footer-row">
-            <div>
-              <span class="price">$${product.price.toFixed(2)}</span>
+          <div class="product-price-rating-row">
+            <div class="product-price-group">
               ${product.oldPrice ? `<span class="price-old">$${product.oldPrice.toFixed(2)}</span>` : ''}
+              <span class="price">$${product.price.toFixed(2)}</span>
+              <span class="product-unit">/ ${product.weight}</span>
             </div>
-
-            <div style="display: flex; align-items: center; gap: 6px;">
-              <div class="qty-stepper">
-                <button class="qty-btn" data-action="card-qty-minus">-</button>
-                <span class="qty-val card-qty-val">1</span>
-                <button class="qty-btn" data-action="card-qty-plus">+</button>
+            ${product.rating ? `
+              <div class="product-inline-rating">
+                <span>${product.rating.toFixed(1)}</span>
+                <span class="star">★</span>
               </div>
-              <button class="add-cart-btn" data-action="add-cart">
-                Add
-              </button>
+            ` : ''}
+          </div>
+
+          <div class="product-hover-footer">
+            <div class="qty-stepper">
+              <button class="qty-btn" data-action="card-qty-minus">-</button>
+              <span class="qty-val card-qty-val">1</span>
+              <button class="qty-btn" data-action="card-qty-plus">+</button>
             </div>
+            <button class="add-cart-btn" data-action="add-cart">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -72,9 +81,9 @@ export const ProductsRenderer = {
 
     if (products.length === 0) {
       container.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: #ffffff; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
-          <p style="font-weight: 700; font-size: 1.1rem; margin-bottom: 8px;">No matching organic produce found</p>
-          <p style="font-size: 0.82rem; color: var(--text-muted);">Try adjusting your filter options or price range.</p>
+        <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: #ffffff; border-radius: var(--radius-md);">
+          <p style="font-weight: 700; font-size: 1.1rem; margin-bottom: 8px;">No matching products found</p>
+          <p style="font-size: 0.84rem; color: var(--text-muted);">Try adjusting your filter options or price range.</p>
         </div>
       `;
       return;
@@ -112,79 +121,15 @@ export const ProductsRenderer = {
       card.querySelector('[data-action="wishlist"]')?.addEventListener('click', (e) => {
         e.preventDefault();
         Wishlist.toggle(product);
-        const btn = e.target.closest('button');
+        const btn = e.currentTarget;
         const isFav = Wishlist.isWishlisted(product.id);
         if (btn) {
-          btn.innerHTML = isFav ? '❤️' : '🤍';
           btn.classList.toggle('favorited', isFav);
+          btn.innerHTML = isFav
+            ? `<svg width="17" height="17" viewBox="0 0 24 24" fill="#bc473b" stroke="#bc473b" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`
+            : `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`;
         }
       });
-
-      card.querySelector('[data-action="quickview"]')?.addEventListener('click', (e) => {
-        e.preventDefault();
-        this.openQuickView(product);
-      });
-    });
-  },
-
-  openQuickView(product) {
-    let modal = document.querySelector('.quick-view-modal');
-    if (!modal) {
-      modal = document.createElement('div');
-      modal.className = 'quick-view-modal';
-      modal.style.cssText = `
-        position: fixed; inset: 0; background: rgba(0,0,0,0.6);
-        backdrop-filter: blur(2px); z-index: 300; display: flex;
-        align-items: center; justify-content: center; padding: 20px;
-      `;
-      document.body.appendChild(modal);
-    }
-
-    const inPagesDir = window.location.pathname.includes('/pages/');
-    const detailUrl = inPagesDir ? `product.html?id=${product.id}` : `pages/product.html?id=${product.id}`;
-
-    modal.innerHTML = `
-      <div style="background: #ffffff; border-radius: var(--radius-lg); max-width: 760px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 32px; position: relative; box-shadow: var(--shadow-lg);">
-        <button class="quick-view-close" style="position: absolute; top: 16px; right: 16px; font-size: 1.4rem; color: var(--text-light); cursor: pointer;">✕</button>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
-          <div>
-            <img src="${product.images[0]}" alt="${product.name}" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--radius-md);">
-          </div>
-          <div>
-            <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary); text-transform: uppercase;">${product.category}</span>
-            <h3 style="font-size: 1.4rem; font-weight: 800; margin: 8px 0 12px 0;">${product.name}</h3>
-            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
-              <span class="price" style="font-size: 1.5rem;">$${product.price.toFixed(2)}</span>
-              ${product.oldPrice ? `<span class="price-old">$${product.oldPrice.toFixed(2)}</span>` : ''}
-              <span style="font-size: 0.8rem; color: var(--text-muted);">/ ${product.weight}</span>
-            </div>
-            <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.6; margin-bottom: 20px;">${product.description}</p>
-            <div style="font-size: 0.8rem; margin-bottom: 24px; color: var(--text-muted);">
-              <div>Availability: <strong style="color: var(--primary);">In Stock (${product.stock} units)</strong></div>
-              <div>SKU: <strong>${product.sku}</strong></div>
-            </div>
-            <div style="display: flex; gap: 10px;">
-              <button class="btn btn-primary modal-add-cart" style="flex: 1;">Add to Cart</button>
-              <a href="${detailUrl}" class="btn btn-outline">Full Details →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-
-    modal.style.display = 'flex';
-
-    modal.querySelector('.quick-view-close').addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.style.display = 'none';
-    });
-
-    modal.querySelector('.modal-add-cart').addEventListener('click', () => {
-      Cart.addItem(product, 1);
-      modal.style.display = 'none';
     });
   },
 
@@ -195,7 +140,7 @@ export const ProductsRenderer = {
 
     if (!product) return;
 
-    document.title = `${product.name} - WoodMart Vegetables`;
+    document.title = `${product.name} - Woodmart Vegetarian Grocery`;
 
     const breadcrumbCategory = document.querySelector('.detail-breadcrumb-cat');
     const breadcrumbTitle = document.querySelector('.detail-breadcrumb-title');
@@ -246,7 +191,7 @@ export const ProductsRenderer = {
       oldPriceEl.textContent = product.oldPrice ? `$${product.oldPrice.toFixed(2)}` : '';
       oldPriceEl.style.display = product.oldPrice ? 'inline' : 'none';
     }
-    if (weightBadge) weightBadge.textContent = product.weight;
+    if (weightBadge) weightBadge.textContent = `Unit: ${product.weight}`;
 
     let qty = 1;
     const qtySpan = document.querySelector('.detail-qty-span');

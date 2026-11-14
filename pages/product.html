@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Organic Farm Product - WoodMart Vegetables</title>
+    <title>Product Details - WoodMart Vegetarian Grocery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,16 +14,62 @@
     <link rel="stylesheet" href="../src/css/responsive.css" />
   </head>
   <body>
+    <aside class="left-icon-rail">
+      <button class="rail-menu-trigger" aria-label="Open categories menu">☰</button>
+      <a href="products.html?cat=Vegetables & Fruits" class="rail-icon-link" title="Vegetables & Fruits">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2C7.5 2 4 6.5 4 12c0 4.5 3.5 9 8 9s8-4.5 8-9c0-5.5-3.5-10-8-10z"/><circle cx="12" cy="13" r="3.2"/></svg>
+      </a>
+      <a href="products.html?cat=Vegan Meat" class="rail-icon-link" title="Vegan Meat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="8" width="18" height="8" rx="4"/><path d="M7 8v8M17 8v8"/></svg>
+      </a>
+      <a href="products.html?cat=Seafood" class="rail-icon-link" title="Seafood">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z"/><circle cx="16" cy="12" r="1.5"/></svg>
+      </a>
+      <a href="products.html?cat=Dairy" class="rail-icon-link" title="Dairy">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 10l9-6 9 6v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9z"/><circle cx="9" cy="14" r="1.2"/><circle cx="15" cy="16" r="1.2"/></svg>
+      </a>
+      <a href="products.html?cat=Bakery" class="rail-icon-link" title="Bakery">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 15c0-4.4 3.6-8 8-8s8 3.6 8 8v2H4v-2z"/></svg>
+      </a>
+      <a href="products.html?cat=Beverages" class="rail-icon-link" title="Beverages">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 8h10l-1 13H8L7 8z"/><path d="M12 8V3l3-1"/></svg>
+      </a>
+      <a href="../index.html#weekly-discounts" class="rail-icon-link discount-icon" title="Weekly Discounts">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="9" y1="15" x2="15" y2="9"/></svg>
+      </a>
+    </aside>
+
+    <div class="left-sidebar-overlay"></div>
+    <div class="left-sidebar-drawer">
+      <div class="left-drawer-pill-header">
+        <span>☰</span>
+        <span>Menu</span>
+      </div>
+      <ul class="left-drawer-list">
+        <li><a href="products.html?cat=Vegetables & Fruits" class="left-drawer-link"><span>Vegetables & Fruits</span><span class="left-drawer-chevron">›</span></a></li>
+        <li><a href="products.html?cat=Vegan Meat" class="left-drawer-link"><span>Vegan Meat</span><span class="left-drawer-chevron">›</span></a></li>
+        <li><a href="products.html?cat=Seafood" class="left-drawer-link"><span>Seafood</span><span class="left-drawer-chevron">›</span></a></li>
+        <li><a href="products.html?cat=Dairy" class="left-drawer-link"><span>Dairy</span><span class="left-drawer-chevron">›</span></a></li>
+        <li><a href="products.html?cat=Bakery" class="left-drawer-link"><span>Bakery</span><span class="left-drawer-chevron">›</span></a></li>
+        <li><a href="products.html?cat=Beverages" class="left-drawer-link"><span>Beverages</span><span class="left-drawer-chevron">›</span></a></li>
+        <li><a href="../index.html#weekly-discounts" class="left-drawer-link"><span>Weekly Discounts</span></a></li>
+      </ul>
+    </div>
+
     <div class="top-bar">
       <div class="container">
         <div class="top-bar-left">
-          <span>🚚 FREE DELIVERY ON ALL ORDERS OVER <strong>$45.00!</strong></span>
-          <span>📞 Hotline: (+800) 1234 5678</span>
+          <a href="../index.html">About Us</a>
+          <span class="top-bar-divider">|</span>
+          <a href="../index.html">Contact Us</a>
+          <span class="top-bar-divider">|</span>
+          <a href="../index.html">Delivery</a>
         </div>
         <div class="top-bar-right">
-          <a href="../index.html">Home</a>
-          <span>USD ($)</span>
-          <span>English</span>
+          <a href="products.html"><span>Store Locations</span></a>
+          <a href="tel:9562387908"><span>(956) 238-7908</span></a>
+          <a href="wishlist.html"><span>Wishlist</span></a>
+          <a href="wishlist.html"><span>Login / Register</span></a>
         </div>
       </div>
     </div>
@@ -33,53 +79,52 @@
         <button class="mobile-nav-toggle" aria-label="Open mobile menu">☰</button>
 
         <a href="../index.html" class="logo">
-          <div class="logo-leaf">🌿</div>
-          <div>WOOD<span>MART</span></div>
+          <div class="logo-carrot-icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <path d="M22 6C22 6 25 3 28 5C26 8 23 9 23 9" stroke="#81b14f" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M20 8C20 8 19 3 22 2C24 5 22 8 22 8" stroke="#81b14f" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M24 10C24 10 28 8 30 11C27 13 24 12 24 12" stroke="#81b14f" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M18.5 9.5C21.5 9.5 25.5 13.5 25.5 16.5C25.5 20.5 14 31 10 31C8.5 31 7 29.5 7 28C7 24 15.5 9.5 18.5 9.5Z" fill="#f28b30" stroke="#2c3e21" stroke-width="1.8"/>
+              <path d="M16 14L19 16M13 19L16 21M11 24L13 25" stroke="#2c3e21" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="logo-text-group">
+            <span class="logo-brand-title">Woodmart.</span>
+            <span class="logo-brand-sub">VEGETARIAN GROCERY</span>
+          </div>
         </a>
+
+        <button class="all-categories-btn">
+          <span>☰</span>
+          <span>All Categories</span>
+        </button>
 
         <div class="search-form-wrapper">
           <form class="search-form">
-            <select class="search-category-select">
-              <option value="all">All Categories</option>
-              <option value="Vegetables & Fruits">Vegetables & Fruits</option>
-              <option value="Bakery">Bakery</option>
-              <option value="Seafood">Seafood</option>
-              <option value="Vegan Meat">Vegan Meat</option>
-            </select>
-            <input type="text" class="search-input" placeholder="Search organic vegetables, bread, fruits..." autocomplete="off">
-            <button type="submit" class="search-btn">🔍</button>
+            <span class="search-icon-prefix">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input type="text" class="search-input" placeholder="Search for products" autocomplete="off">
           </form>
-          <div class="search-results-dropdown"></div>
+        </div>
+
+        <div class="header-nav-Utilities">
+          <a href="../index.html#weekly-discounts" class="header-promo-link"><span>Promotions</span></a>
+          <a href="products.html?cat=Bakery" class="header-promo-link"><span>Ideas For Breakfast</span></a>
+          <a href="../index.html#weekly-discounts" class="header-promo-link"><span>Weekly Discounts</span></a>
         </div>
 
         <div class="header-actions">
-          <a href="wishlist.html" class="header-action-btn" title="Wishlist">
-            <div class="action-icon-wrapper">
-              🤍
-              <span class="action-badge action-badge-wishlist wishlist-count-badge">0</span>
-            </div>
-            <div class="action-text">
-              <span class="action-sub">Favorite</span>
-              <span class="action-main">Wishlist</span>
-            </div>
-          </a>
-
-          <button class="header-action-btn header-cart-trigger" title="Cart">
-            <div class="action-icon-wrapper">
-              🛒
-              <span class="action-badge cart-count-badge">0</span>
-            </div>
-            <div class="action-text">
-              <span class="action-sub">Your Cart</span>
-              <span class="action-main cart-subtotal-val">$0.00</span>
-            </div>
+          <button class="header-cart-circle header-cart-trigger" title="Shopping Cart">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="action-badge cart-count-badge">0</span>
           </button>
         </div>
       </div>
     </header>
 
     <main class="container">
-      <div class="breadcrumb">
+      <div class="breadcrumb" style="padding-top: 20px;">
         <a href="../index.html">Home</a>
         <span>/</span>
         <a href="products.html" class="detail-breadcrumb-cat">Shop</a>
@@ -101,13 +146,13 @@
 
           <div class="detail-rating">
             <span class="stars">★★★★★</span>
-            <span>(4.8 out of 5 based on verified farm customer reviews)</span>
+            <span>(Verified customer reviews)</span>
           </div>
 
           <div class="detail-price-box">
             <span class="price detail-price-val">$0.00</span>
             <span class="price-old detail-old-price-val"></span>
-            <span class="badge badge-organic detail-weight-badge" style="margin-left: auto;">Weight: 1kg</span>
+            <span class="badge badge-organic detail-weight-badge" style="margin-left: auto;">Unit: each</span>
           </div>
 
           <p class="detail-desc detail-product-desc"></p>
@@ -122,7 +167,7 @@
               <span class="detail-meta-val detail-sku-val"></span>
             </div>
             <div class="detail-meta-row">
-              <span class="detail-meta-label">Farm Origin:</span>
+              <span class="detail-meta-label">Origin:</span>
               <span class="detail-meta-val detail-origin-val"></span>
             </div>
             <div class="detail-meta-row">
@@ -137,12 +182,8 @@
               <span class="detail-qty-span">1</span>
               <button class="detail-qty-plus">+</button>
             </div>
-            <button class="btn-add-cart-lg detail-add-cart-btn">
-              🛒 Add to Cart
-            </button>
-            <button class="btn-wishlist-lg detail-wishlist-btn" title="Add to Wishlist">
-              🤍
-            </button>
+            <button class="btn-add-cart-lg detail-add-cart-btn">Add to Cart</button>
+            <button class="btn-wishlist-lg detail-wishlist-btn" title="Add to Wishlist">🤍</button>
           </div>
 
           <div class="detail-perks">
@@ -170,32 +211,16 @@
           <div id="tab-description" class="tab-panel">
             <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px;">Farm Harvest Story & Storage</h4>
             <p style="margin-bottom: 16px;">
-              Our organic vegetables and artisan produce are grown without synthetic fertilizers or chemical pesticides. Sourced directly from local certified organic growers who practice soil restoration and regenerative farming.
+              Our organic vegetables and artisan produce are grown without synthetic fertilizers or chemical pesticides. Sourced directly from certified organic growers.
             </p>
-            <div style="background: #f9fafb; padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-              <strong style="color: var(--text-main);">Pro Storage Advice:</strong> Keep refrigerated loosely wrapped in breathable crisper bags. Consume within shelf-life recommendation for peak flavor and crisp crunch.
-            </div>
           </div>
 
           <div id="tab-nutrition" class="tab-panel" style="display: none;">
             <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 16px;">Verified Nutritional Profile</h4>
             <table class="nutrition-table">
-              <tr>
-                <td><strong>Energy / Calories</strong></td>
-                <td>25 - 65 kcal / 100g</td>
-              </tr>
-              <tr>
-                <td><strong>Dietary Fiber</strong></td>
-                <td>High in natural prebiotic fiber</td>
-              </tr>
-              <tr>
-                <td><strong>Micronutrients</strong></td>
-                <td style="color: var(--primary); font-weight: 700;">Vitamin C, Vitamin K, Folate, Potassium</td>
-              </tr>
-              <tr>
-                <td><strong>Pesticide Residue</strong></td>
-                <td>0.00% (Certified Non-GMO & Organic)</td>
-              </tr>
+              <tr><td><strong>Energy / Calories</strong></td><td>25 - 65 kcal / 100g</td></tr>
+              <tr><td><strong>Dietary Fiber</strong></td><td>High in natural prebiotic fiber</td></tr>
+              <tr><td><strong>Micronutrients</strong></td><td style="color: var(--primary); font-weight: 700;">Vitamin C, Vitamin K, Folate, Potassium</td></tr>
             </table>
           </div>
 
@@ -208,20 +233,20 @@
                   <span style="font-size: 0.75rem; color: var(--text-light);">2 days ago</span>
                 </div>
                 <div class="stars" style="margin-bottom: 6px;">★★★★★</div>
-                <p style="font-size: 0.85rem; color: #4b5563;">Incredibly fresh! You can literally smell the earth and sun. Arrived ice-cold in recyclable packaging.</p>
+                <p style="font-size: 0.85rem; color: #4b5563;">Incredibly fresh! Arrived chilled in eco-friendly packaging.</p>
               </div>
             </div>
 
             <div style="border-top: 1px solid var(--border-color); padding-top: 24px; margin-top: 24px;">
               <h5 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 14px;">Leave a Verified Review</h5>
               <form class="add-review-form" style="max-width: 480px; display: flex; flex-direction: column; gap: 12px;">
-                <input type="text" id="review-author" required placeholder="Your full name" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
-                <select id="review-rating" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                <input type="text" id="review-author" required placeholder="Your full name" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                <select id="review-rating" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
                   <option value="5">★★★★★ (5 - Excellent)</option>
                   <option value="4">★★★★☆ (4 - Good)</option>
                   <option value="3">★★★☆☆ (3 - Average)</option>
                 </select>
-                <textarea id="review-comment" required rows="3" placeholder="Share your experience with freshness, flavor, and delivery..." style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-md);"></textarea>
+                <textarea id="review-comment" required rows="3" placeholder="Share your experience..." style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);"></textarea>
                 <button type="submit" class="btn btn-primary" style="width: fit-content;">Submit Review</button>
               </form>
             </div>
@@ -229,20 +254,15 @@
 
           <div id="tab-shipping" class="tab-panel" style="display: none;">
             <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px;">Cold Chain Transport Policy</h4>
-            <p style="margin-bottom: 10px;">
-              Every parcel is packed with reusable biodegradable gel packs inside insulated moisture-resistant crates to preserve cold chain integrity at 2°C - 4°C.
-            </p>
-            <p>
-              Free delivery applies to all baskets exceeding $45.00 automatically. Same-day morning harvest dispatch for orders before 11:00 AM.
-            </p>
+            <p>Every order is packed in insulated moisture-resistant crates to preserve cold chain integrity at 2°C - 4°C.</p>
           </div>
         </div>
       </div>
 
       <div style="margin-bottom: 60px;">
-        <div class="section-header">
-          <h2 class="section-title">Related Products</h2>
-          <a href="products.html" class="section-link">View More →</a>
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h2 class="section-title" style="font-size: 1.45rem; font-weight: 800;">Related Products</h2>
+          <a href="products.html" class="section-link">All Products</a>
         </div>
         <div class="products-grid related-products-grid"></div>
       </div>
@@ -251,12 +271,11 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-bottom">
-          <div>© 2026 WoodMart Vegetables. All Rights Reserved.</div>
-          <div style="display: flex; gap: 12px;">
-            <span>VISA</span>
-            <span>Mastercard</span>
-            <span>PayPal</span>
-            <span>Apple Pay</span>
+          <div><strong>WoodMart</strong> theme 2026 <strong>WooCommerce Themes</strong>.</div>
+          <div class="footer-bottom-links">
+            <a href="../index.html">Terms Of Service</a>
+            <a href="../index.html">Privacy Policy</a>
+            <a href="../index.html">Store Refund Policy</a>
           </div>
         </div>
       </div>
@@ -293,7 +312,6 @@
         Cart.init();
         Wishlist.init();
         Menu.init();
-
         Search.init(PRODUCTS);
         ProductsRenderer.renderDetailPage(PRODUCTS);
       }

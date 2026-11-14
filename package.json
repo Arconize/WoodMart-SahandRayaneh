@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node server.js",
-    "start": "node server.js",
-    "build": "node -e \"console.log('Pure HTML/CSS/JS ready')\"",
-    "lint": "node --check server.js src/js/cart.js src/js/filters.js src/js/menu.js src/js/products.js src/js/search.js src/js/storage.js src/js/wishlist.js src/data/products.js"
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf dist server.js",
+    "lint": "vite build --mode development"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
@@ -26,7 +27,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "autoprefixer": "^10.4.21",
-    "esbuild": "^0.28.0",
+    "esbuild": "^0.25.0",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.21.0",
     "typescript": "^7.0.2",

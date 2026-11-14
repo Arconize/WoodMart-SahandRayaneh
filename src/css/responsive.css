@@ -34,149 +34,95 @@
   position: relative;
 }
 
-.mobile-bar-btn.active, .mobile-bar-btn:hover {
+.mobile-bar-btn.active,
+.mobile-bar-btn:hover {
   color: var(--primary);
 }
 
-.mobile-bar-btn .icon {
-  font-size: 1.25rem;
-}
-
-.mobile-menu-drawer {
-  position: fixed;
-  top: 0;
-  left: -320px;
-  width: 100%;
-  max-width: 300px;
-  height: 100vh;
-  background: #ffffff;
-  z-index: 210;
-  box-shadow: var(--shadow-lg);
-  display: flex;
-  flex-direction: column;
-  transition: left 0.3s ease;
-}
-
-.mobile-menu-drawer.active {
-  left: 0;
-}
-
-.mobile-menu-header {
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mobile-menu-links {
-  list-style: none;
-  padding: 16px 0;
-  overflow-y: auto;
-}
-
-.mobile-menu-links li a {
-  display: block;
-  padding: 12px 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-main);
-  border-bottom: 1px solid #f9fafb;
-}
-
-.mobile-menu-links li a:hover {
-  color: var(--primary);
-  background: var(--primary-light);
+@media (max-width: 1200px) {
+  .home-products-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .pop-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .subcategories-pills-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
+  .hero-bento-grid {
+    grid-template-columns: 1fr 1fr;
   }
-  .hero-side-banners {
-    flex-direction: row;
+  .hero-main-banner {
+    grid-column: span 2;
   }
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .category-cards-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .header-nav-Utilities {
+    display: none;
   }
   .shop-layout {
     grid-template-columns: 240px 1fr;
-    gap: 24px;
   }
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .search-overlay-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+  }
+  .footer-newsletter-bar {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-left: 0;
+    padding-bottom: 60px;
+  }
+  .left-icon-rail {
+    display: none;
+  }
   .top-bar {
     display: none;
   }
-  .nav-bar {
-    display: none;
-  }
   .mobile-nav-toggle {
-    display: block;
+    display: inline-flex;
   }
   .mobile-bottom-bar {
     display: block;
   }
-  body {
-    padding-bottom: 60px;
-  }
-  .search-form-wrapper {
+  .all-categories-btn {
     display: none;
   }
-  .header-actions .action-text {
-    display: none;
+  .hero-bento-grid {
+    grid-template-columns: 1fr;
   }
   .hero-main-banner {
-    padding: 28px 20px;
-    min-height: 320px;
-  }
-  .hero-title {
-    font-size: 2rem;
-  }
-  .hero-side-banners {
+    grid-column: span 1;
     flex-direction: column;
+    padding: 28px 22px;
+    text-align: center;
   }
-  .features-grid {
+  .hero-main-visual {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .pop-categories-grid {
     grid-template-columns: 1fr;
   }
-  .category-cards-grid {
+  .home-products-row {
     grid-template-columns: repeat(2, 1fr);
   }
-  .deals-grid {
-    grid-template-columns: 1fr;
-  }
-  .deal-card {
-    flex-direction: column;
-  }
-  .deal-card img {
-    width: 100%;
-    height: 180px;
-  }
-  .promo-grid {
-    grid-template-columns: 1fr;
-  }
-  .newsletter-box {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-  .newsletter-form {
-    flex-direction: column;
-    width: 100%;
-  }
-  .newsletter-input {
-    width: 100%;
+  .subcategories-pills-row {
+    grid-template-columns: repeat(2, 1fr);
   }
   .shop-layout {
     grid-template-columns: 1fr;
@@ -188,27 +134,35 @@
     display: block;
     position: fixed;
     inset: 0;
-    z-index: 220;
+    z-index: 240;
     overflow-y: auto;
     border-radius: 0;
   }
   .detail-layout {
     grid-template-columns: 1fr;
-    gap: 24px;
   }
   .cart-page-layout {
     grid-template-columns: 1fr;
   }
-  .cart-table th:nth-child(2),
-  .cart-table td:nth-child(2) {
-    display: none;
+  .search-overlay-modal {
+    padding: 60px 16px 24px 16px;
+  }
+  .search-overlay-columns {
+    grid-template-columns: 1fr;
   }
   .footer-grid {
     grid-template-columns: 1fr;
   }
+  .footer-newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+  .footer-newsletter-input {
+    width: 100%;
+  }
   .footer-bottom {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     text-align: center;
   }
 }

@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WoodMart Vegetables - Organic Grocery Store</title>
-    <meta name="description" content="Full-featured online organic grocery and fresh vegetables supermarket inspired by WoodMart Vegetables." />
-    <meta property="og:title" content="WoodMart Vegetables - Organic Grocery Store" />
-    <meta property="og:description" content="Full-featured online organic grocery and fresh vegetables supermarket inspired by WoodMart Vegetables." />
+    <title>WoodMart Vegetables - Vegetarian Grocery & Organic Food</title>
+    <meta name="description" content="From frozen veggie products to canned favorites and vegan alternatives, WoodMart Vegetarian Grocery has something for everyone." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -17,16 +15,129 @@
     <link rel="stylesheet" href="./src/css/responsive.css" />
   </head>
   <body>
+    <aside class="left-icon-rail">
+      <button class="rail-menu-trigger" aria-label="Open categories menu">☰</button>
+      <a href="pages/products.html?cat=Vegetables & Fruits" class="rail-icon-link" title="Vegetables & Fruits">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2C7.5 2 4 6.5 4 12c0 4.5 3.5 9 8 9s8-4.5 8-9c0-5.5-3.5-10-8-10z"/><circle cx="12" cy="13" r="3.2"/></svg>
+      </a>
+      <a href="pages/products.html?cat=Vegan Meat" class="rail-icon-link" title="Vegan Meat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="8" width="18" height="8" rx="4"/><path d="M7 8v8M17 8v8"/></svg>
+      </a>
+      <a href="pages/products.html?cat=Seafood" class="rail-icon-link" title="Seafood">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z"/><circle cx="16" cy="12" r="1.5"/></svg>
+      </a>
+      <a href="pages/products.html?cat=Dairy" class="rail-icon-link" title="Dairy">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 10l9-6 9 6v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9z"/><circle cx="9" cy="14" r="1.2"/><circle cx="15" cy="16" r="1.2"/></svg>
+      </a>
+      <a href="pages/products.html?cat=Bakery" class="rail-icon-link" title="Bakery">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 15c0-4.4 3.6-8 8-8s8 3.6 8 8v2H4v-2z"/></svg>
+      </a>
+      <a href="pages/products.html?cat=Beverages" class="rail-icon-link" title="Beverages">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 8h10l-1 13H8L7 8z"/><path d="M12 8V3l3-1"/></svg>
+      </a>
+      <a href="#weekly-discounts" class="rail-icon-link discount-icon" title="Weekly Discounts">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="9" y1="15" x2="15" y2="9"/></svg>
+      </a>
+    </aside>
+
+    <div class="left-sidebar-overlay"></div>
+    <div class="left-sidebar-drawer">
+      <div class="left-drawer-pill-header">
+        <span>☰</span>
+        <span>Menu</span>
+      </div>
+      <ul class="left-drawer-list">
+        <li>
+          <a href="pages/products.html?cat=Vegetables & Fruits" class="left-drawer-link">
+            <span class="left-drawer-link-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2C7.5 2 4 6.5 4 12c0 4.5 3.5 9 8 9s8-4.5 8-9c0-5.5-3.5-10-8-10z"/><circle cx="12" cy="13" r="3"/></svg>
+              <span>Vegetables & Fruits</span>
+            </span>
+            <span class="left-drawer-chevron">›</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/products.html?cat=Vegan Meat" class="left-drawer-link">
+            <span class="left-drawer-link-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="8" width="18" height="8" rx="4"/><path d="M7 8v8M17 8v8"/></svg>
+              <span>Vegan Meat</span>
+            </span>
+            <span class="left-drawer-chevron">›</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/products.html?cat=Seafood" class="left-drawer-link">
+            <span class="left-drawer-link-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z"/><circle cx="16" cy="12" r="1.5"/></svg>
+              <span>Seafood</span>
+            </span>
+            <span class="left-drawer-chevron">›</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/products.html?cat=Dairy" class="left-drawer-link">
+            <span class="left-drawer-link-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 10l9-6 9 6v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9z"/></svg>
+              <span>Dairy</span>
+            </span>
+            <span class="left-drawer-chevron">›</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/products.html?cat=Bakery" class="left-drawer-link">
+            <span class="left-drawer-link-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 15c0-4.4 3.6-8 8-8s8 3.6 8 8v2H4v-2z"/></svg>
+              <span>Bakery</span>
+            </span>
+            <span class="left-drawer-chevron">›</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/products.html?cat=Beverages" class="left-drawer-link">
+            <span class="left-drawer-link-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 8h10l-1 13H8L7 8z"/><path d="M12 8V3l3-1"/></svg>
+              <span>Beverages</span>
+            </span>
+            <span class="left-drawer-chevron">›</span>
+          </a>
+        </li>
+        <li>
+          <a href="#weekly-discounts" class="left-drawer-link">
+            <span class="left-drawer-link-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#81b14f" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="9" y1="15" x2="15" y2="9"/></svg>
+              <span>Weekly Discounts</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
     <div class="top-bar">
       <div class="container">
         <div class="top-bar-left">
-          <span>🚚 FREE DELIVERY ON ALL ORDERS OVER <strong>$45.00!</strong></span>
-          <span>📞 Hotline: (+800) 1234 5678</span>
+          <a href="pages/products.html">About Us</a>
+          <span class="top-bar-divider">|</span>
+          <a href="pages/products.html">Contact Us</a>
+          <span class="top-bar-divider">|</span>
+          <a href="pages/products.html">Delivery</a>
         </div>
         <div class="top-bar-right">
-          <a href="pages/products.html">Track Order</a>
-          <span>USD ($)</span>
-          <span>English</span>
+          <a href="pages/products.html">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Store Locations</span>
+          </a>
+          <a href="tel:9562387908">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>(956) 238-7908</span>
+          </a>
+          <a href="pages/wishlist.html">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span>Wishlist</span>
+          </a>
+          <a href="pages/wishlist.html">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Login / Register</span>
+          </a>
         </div>
       </div>
     </div>
@@ -36,128 +147,152 @@
         <button class="mobile-nav-toggle" aria-label="Open mobile menu">☰</button>
 
         <a href="index.html" class="logo">
-          <div class="logo-leaf">🌿</div>
-          <div>WOOD<span>MART</span></div>
+          <div class="logo-carrot-icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <path d="M22 6C22 6 25 3 28 5C26 8 23 9 23 9" stroke="#81b14f" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M20 8C20 8 19 3 22 2C24 5 22 8 22 8" stroke="#81b14f" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M24 10C24 10 28 8 30 11C27 13 24 12 24 12" stroke="#81b14f" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M18.5 9.5C21.5 9.5 25.5 13.5 25.5 16.5C25.5 20.5 14 31 10 31C8.5 31 7 29.5 7 28C7 24 15.5 9.5 18.5 9.5Z" fill="#f28b30" stroke="#2c3e21" stroke-width="1.8"/>
+              <path d="M16 14L19 16M13 19L16 21M11 24L13 25" stroke="#2c3e21" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="logo-text-group">
+            <span class="logo-brand-title">Woodmart.</span>
+            <span class="logo-brand-sub">VEGETARIAN GROCERY</span>
+          </div>
         </a>
+
+        <button class="all-categories-btn">
+          <span>☰</span>
+          <span>All Categories</span>
+        </button>
 
         <div class="search-form-wrapper">
           <form class="search-form">
-            <select class="search-category-select">
-              <option value="all">All Categories</option>
-              <option value="Vegetables & Fruits">Vegetables & Fruits</option>
-              <option value="Bakery">Bakery</option>
-              <option value="Seafood">Seafood</option>
-              <option value="Vegan Meat">Vegan Meat</option>
-            </select>
-            <input type="text" class="search-input" placeholder="Search organic vegetables, bread, fruits..." autocomplete="off">
-            <button type="submit" class="search-btn">🔍</button>
+            <span class="search-icon-prefix">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input type="text" class="search-input" placeholder="Search for products" autocomplete="off">
           </form>
-          <div class="search-results-dropdown"></div>
+        </div>
+
+        <div class="header-nav-Utilities">
+          <a href="#weekly-discounts" class="header-promo-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c1.5 3.5 4 5.5 4 9a4 4 0 1 1-8 0c0-3.5 2.5-5.5 4-9z"/></svg>
+            <span>Promotions</span>
+          </a>
+          <a href="pages/products.html?cat=Bakery" class="header-promo-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+            <span>Ideas For Breakfast</span>
+          </a>
+          <a href="#weekly-discounts" class="header-promo-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="9" y1="15" x2="15" y2="9"/></svg>
+            <span>Weekly Discounts</span>
+          </a>
         </div>
 
         <div class="header-actions">
-          <a href="pages/wishlist.html" class="header-action-btn" title="Wishlist">
-            <div class="action-icon-wrapper">
-              🤍
-              <span class="action-badge action-badge-wishlist wishlist-count-badge">0</span>
-            </div>
-            <div class="action-text">
-              <span class="action-sub">Favorite</span>
-              <span class="action-main">Wishlist</span>
-            </div>
-          </a>
-
-          <button class="header-action-btn header-cart-trigger" title="Cart">
-            <div class="action-icon-wrapper">
-              🛒
-              <span class="action-badge cart-count-badge">0</span>
-            </div>
-            <div class="action-text">
-              <span class="action-sub">Your Cart</span>
-              <span class="action-main cart-subtotal-val">$0.00</span>
-            </div>
+          <button class="header-cart-circle header-cart-trigger" title="Shopping Cart">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="action-badge cart-count-badge">0</span>
           </button>
         </div>
       </div>
     </header>
 
-    <nav class="nav-bar">
-      <div class="container">
-        <div class="categories-dropdown-wrapper">
-          <button class="categories-btn">
-            <span>☰</span>
-            <span>Browse Categories</span>
-            <span>▾</span>
-          </button>
-          <div class="categories-menu">
-            <a href="pages/products.html?cat=Vegetables & Fruits" class="category-menu-item">
-              <span>🥦 Vegetables & Fruits</span>
-              <span class="filter-cat-count">8</span>
-            </a>
-            <a href="pages/products.html?cat=Bakery" class="category-menu-item">
-              <span>🥖 Bakery & Bread</span>
-              <span class="filter-cat-count">3</span>
-            </a>
-            <a href="pages/products.html?cat=Seafood" class="category-menu-item">
-              <span>🐟 Wild Seafood</span>
-              <span class="filter-cat-count">2</span>
-            </a>
-            <a href="pages/products.html?cat=Vegan Meat" class="category-menu-item">
-              <span>🌱 Plant-Based Meat</span>
-              <span class="filter-cat-count">2</span>
-            </a>
+    <main>
+      <section class="story-circles-section">
+        <div class="container">
+          <div class="story-circles-row">
+            <div class="story-circle-item" onclick="window.location.href='pages/products.html?cat=Beverages'">
+              <div class="story-circle-ring">
+                <div class="story-circle-inner story-bg-blue">
+                  <img src="https://images.unsplash.com/photo-1622543925917-763c34d1a86e?auto=format&fit=crop&w=300&q=80" alt="-35% on Energy Drinks">
+                </div>
+              </div>
+              <span class="story-circle-label">-35% on Energy Drinks</span>
+            </div>
+
+            <div class="story-circle-item" onclick="window.location.href='pages/products.html?cat=Vegetables & Fruits&sub=Frozen Veg'">
+              <div class="story-circle-ring">
+                <div class="story-circle-inner story-bg-green">
+                  <div class="story-new-stamp">NEW</div>
+                </div>
+              </div>
+              <span class="story-circle-label">New Frozen Veg</span>
+            </div>
+
+            <div class="story-circle-item" onclick="window.location.href='pages/products.html?cat=Dairy'">
+              <div class="story-circle-ring">
+                <div class="story-circle-inner story-bg-beige">
+                  <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=300&q=80" alt="Save up 30% on milk">
+                </div>
+              </div>
+              <span class="story-circle-label">Save up 30% on milk</span>
+            </div>
+
+            <div class="story-circle-item" onclick="window.location.href='pages/products.html?cat=Bakery'">
+              <div class="story-circle-ring">
+                <div class="story-circle-inner story-bg-warm">
+                  <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=300&q=80" alt="Free Delivery">
+                </div>
+              </div>
+              <span class="story-circle-label">Free Delivery</span>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="main-nav">
-          <a href="index.html" class="nav-link active">Home</a>
-          <a href="pages/products.html" class="nav-link">Shop</a>
-          <a href="pages/products.html?cat=Vegetables & Fruits" class="nav-link">Fresh Vegetables</a>
-          <a href="pages/products.html?cat=Bakery" class="nav-link">Artisan Bakery</a>
-          <a href="pages/products.html?cat=Seafood" class="nav-link">Wild Seafood</a>
-          <a href="pages/products.html?cat=Vegan Meat" class="nav-link">Vegan Meat</a>
-        </div>
-
-        <div class="nav-promo">
-          ⭐ SPECIAL OFFER: 30% OFF ORGANIC HARVEST
-        </div>
-      </div>
-    </nav>
-
-    <main>
       <section class="hero-section">
         <div class="container">
-          <div class="hero-grid">
+          <div class="hero-bento-grid">
             <div class="hero-main-banner">
-              <span class="hero-tag">100% Certified Organic Farm Harvest</span>
-              <h1 class="hero-title">Fresh Vegetables<br><span>Straight From</span> Farm</h1>
-              <p class="hero-desc">
-                Picked early this morning, delivered chilled in eco-crates to your kitchen doorstep in under 2 hours. Pure wholesome nutrition.
-              </p>
-              <div>
-                <a href="pages/products.html" class="btn btn-primary" style="padding: 14px 28px; font-size: 0.95rem;">
-                  Shop Fresh Produce →
-                </a>
+              <div class="hero-main-content">
+                <h1 class="hero-title">Get Discounts on Fresh Vegetables & Fruits</h1>
+                <div class="hero-discount-row">
+                  <span class="hero-upto-text">Up to – 10%</span>
+                  <div class="hero-delivery-pill">
+                    <span>🚚</span>
+                    <span>For orders<br>with delivery</span>
+                  </div>
+                </div>
+                <div class="hero-cta-row">
+                  <a href="pages/products.html?cat=Vegetables & Fruits" class="btn btn-white">Shop Now</a>
+                  <span class="hero-cta-note">Discount will apply when you order products with our delivery from 11 am – 4 pm</span>
+                </div>
+              </div>
+
+              <div class="hero-main-visual">
+                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=80" alt="Fresh Vegetables & Fruits">
+              </div>
+
+              <div class="hero-slider-dots">
+                <span class="hero-dot active"></span>
+                <span class="hero-dot"></span>
+                <span class="hero-dot"></span>
+                <span class="hero-dot"></span>
               </div>
             </div>
 
-            <div class="hero-side-banners">
-              <div class="side-banner side-banner-1">
-                <span class="side-banner-tag">Summer Special</span>
-                <h3 class="side-banner-title">Heirloom Vine Tomatoes</h3>
-                <p class="side-banner-desc">Sweet, succulent, rich in lycopene.</p>
-                <a href="pages/products.html?cat=Vegetables & Fruits" class="btn btn-outline" style="width: fit-content; padding: 6px 14px; font-size: 0.78rem;">
-                  Shop Now →
-                </a>
+            <div class="hero-tall-card hero-tall-blue" onclick="window.location.href='pages/products.html?cat=Beverages'" style="cursor: pointer;">
+              <div>
+                <div class="hero-tall-kicker">SAVE UP TO 35% ON</div>
+                <h3 class="hero-tall-title">Energy Drinks</h3>
+                <a href="pages/products.html?cat=Beverages" class="hero-tall-link">Shop Now</a>
               </div>
+              <div class="hero-tall-img-wrap">
+                <img src="https://images.unsplash.com/photo-1622543925917-763c34d1a86e?auto=format&fit=crop&w=500&q=80" alt="Energy Drinks">
+              </div>
+            </div>
 
-              <div class="side-banner side-banner-2">
-                <span class="side-banner-tag" style="color: #0284c7;">Wild Harvest</span>
-                <h3 class="side-banner-title">Maine Wild Blueberries</h3>
-                <p class="side-banner-desc">Antioxidant superfood packed with flavor.</p>
-                <a href="pages/products.html?cat=Vegetables & Fruits" class="btn btn-outline" style="width: fit-content; padding: 6px 14px; font-size: 0.78rem;">
-                  Shop Now →
-                </a>
+            <div class="hero-tall-card hero-tall-gold" onclick="window.location.href='pages/products.html?cat=Vegan Meat'" style="cursor: pointer;">
+              <div>
+                <div class="hero-tall-kicker">GET DISCOUNT -15% ON</div>
+                <h3 class="hero-tall-title">Plant Nuggets</h3>
+                <a href="pages/products.html?cat=Vegan Meat" class="hero-tall-link">Buy Now</a>
+              </div>
+              <div class="hero-tall-img-wrap">
+                <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=500&q=80" alt="Plant Nuggets">
               </div>
             </div>
           </div>
@@ -166,34 +301,26 @@
 
       <section class="features-bar">
         <div class="container">
-          <div class="features-grid">
-            <div class="feature-item">
-              <div class="feature-icon">🚚</div>
-              <div>
-                <div class="feature-title">Free Delivery</div>
-                <div class="feature-desc">On orders over $45.00</div>
-              </div>
+          <div class="features-strip">
+            <div class="feature-strip-item">
+              <span class="feature-strip-icon">🏪</span>
+              <span>Convenient Offline Stores</span>
             </div>
-            <div class="feature-item">
-              <div class="feature-icon">🌱</div>
-              <div>
-                <div class="feature-title">100% Organic</div>
-                <div class="feature-desc">Certified non-GMO harvest</div>
-              </div>
+            <div class="feature-strip-item">
+              <span class="feature-strip-icon">🚚</span>
+              <span>Free Delivery From £30</span>
             </div>
-            <div class="feature-item">
-              <div class="feature-icon">🛡️</div>
-              <div>
-                <div class="feature-title">Safe Payment</div>
-                <div class="feature-desc">SSL 256-bit encrypted</div>
-              </div>
+            <div class="feature-strip-item">
+              <span class="feature-strip-icon">🛍️</span>
+              <span>Fresh Products Every Day</span>
             </div>
-            <div class="feature-item">
-              <div class="feature-icon">🎧</div>
-              <div>
-                <div class="feature-title">24/7 Support</div>
-                <div class="feature-desc">Dedicated live concierge</div>
-              </div>
+            <div class="feature-strip-item">
+              <span class="feature-strip-icon">💳</span>
+              <span>Safe Payment With Any Bank Card</span>
+            </div>
+            <div class="feature-strip-item">
+              <span class="feature-strip-icon">🎧</span>
+              <span>24/7 Support Always Be There for You</span>
             </div>
           </div>
         </div>
@@ -202,135 +329,157 @@
       <section class="categories-section">
         <div class="container">
           <div class="section-header">
-            <div>
-              <span class="section-subtitle">Explore WoodMart</span>
-              <h2 class="section-title">Popular Categories</h2>
-            </div>
-            <a href="pages/products.html" class="section-link">View All Categories →</a>
+            <h2 class="section-title">Popular Categories</h2>
           </div>
 
-          <div class="category-cards-grid">
-            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Vegetables & Fruits'">
-              <div class="category-card-img">
-                <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=400&q=80" alt="">
+          <div class="pop-categories-grid">
+            <div class="pop-cat-card">
+              <a href="pages/products.html?cat=Vegetables & Fruits" class="pop-cat-thumb pop-bg-veg">
+                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80" alt="Vegetables & Fruits">
+              </a>
+              <div class="pop-cat-info">
+                <a href="pages/products.html?cat=Vegetables & Fruits" class="pop-cat-heading">Vegetables & Fruits</a>
+                <ul class="pop-cat-sublist">
+                  <li><a href="pages/products.html?cat=Vegetables & Fruits&sub=Fresh Fruits">Fresh Fruits</a></li>
+                  <li><a href="pages/products.html?cat=Vegetables & Fruits&sub=Fresh Vegetables">Fresh Vegetables</a></li>
+                  <li><a href="pages/products.html?cat=Vegetables & Fruits&sub=Frozen Veg">Frozen Veg</a></li>
+                  <li><a href="pages/products.html?cat=Vegetables & Fruits&sub=Leafies & Herbs">Leafies & Herbs</a></li>
+                  <li><a href="pages/products.html?cat=Vegetables & Fruits&sub=Mushrooms">Mushrooms</a></li>
+                </ul>
               </div>
-              <div class="category-card-name">Vegetables</div>
-              <div class="category-card-count">8 Products</div>
             </div>
 
-            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Bakery'">
-              <div class="category-card-img">
-                <img src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=400&q=80" alt="">
+            <div class="pop-cat-card">
+              <a href="pages/products.html?cat=Vegan Meat" class="pop-cat-thumb pop-bg-vegan">
+                <img src="https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=400&q=80" alt="Vegan Meat">
+              </a>
+              <div class="pop-cat-info">
+                <a href="pages/products.html?cat=Vegan Meat" class="pop-cat-heading">Vegan Meat</a>
+                <ul class="pop-cat-sublist">
+                  <li><a href="pages/products.html?cat=Vegan Meat">Bacon</a></li>
+                  <li><a href="pages/products.html?cat=Vegan Meat">Beef</a></li>
+                  <li><a href="pages/products.html?cat=Vegan Meat&sub=Burgers">Burgers</a></li>
+                  <li><a href="pages/products.html?cat=Vegan Meat&sub=Chicken">Chicken</a></li>
+                  <li><a href="pages/products.html?cat=Vegan Meat">Deli Meat</a></li>
+                </ul>
               </div>
-              <div class="category-card-name">Artisan Bakery</div>
-              <div class="category-card-count">3 Products</div>
             </div>
 
-            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Seafood'">
-              <div class="category-card-img">
-                <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=400&q=80" alt="">
+            <div class="pop-cat-card">
+              <a href="pages/products.html?cat=Seafood" class="pop-cat-thumb pop-bg-seafood">
+                <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=400&q=80" alt="Seafood">
+              </a>
+              <div class="pop-cat-info">
+                <a href="pages/products.html?cat=Seafood" class="pop-cat-heading">Seafood</a>
+                <ul class="pop-cat-sublist">
+                  <li><a href="pages/products.html?cat=Seafood&sub=Fresh Fish">Fresh Fish</a></li>
+                  <li><a href="pages/products.html?cat=Seafood">Fresh Shellfish</a></li>
+                  <li><a href="pages/products.html?cat=Seafood">Frozen Fish</a></li>
+                </ul>
               </div>
-              <div class="category-card-name">Fresh Seafood</div>
-              <div class="category-card-count">2 Products</div>
             </div>
 
-            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Vegan Meat'">
-              <div class="category-card-img">
-                <img src="https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=400&q=80" alt="">
+            <div class="pop-cat-card">
+              <a href="pages/products.html?cat=Dairy" class="pop-cat-thumb pop-bg-dairy">
+                <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=400&q=80" alt="Dairy">
+              </a>
+              <div class="pop-cat-info">
+                <a href="pages/products.html?cat=Dairy" class="pop-cat-heading">Dairy</a>
+                <ul class="pop-cat-sublist">
+                  <li><a href="pages/products.html?cat=Dairy">Butter</a></li>
+                  <li><a href="pages/products.html?cat=Dairy&sub=Cheese">Cheese</a></li>
+                  <li><a href="pages/products.html?cat=Dairy">Eggs</a></li>
+                  <li><a href="pages/products.html?cat=Dairy">Milk & Cream</a></li>
+                  <li><a href="pages/products.html?cat=Dairy">Yogurt</a></li>
+                </ul>
               </div>
-              <div class="category-card-name">Vegan Meat</div>
-              <div class="category-card-count">2 Products</div>
             </div>
+          </div>
 
-            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Vegetables & Fruits'">
-              <div class="category-card-img">
-                <img src="https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?auto=format&fit=crop&w=400&q=80" alt="">
-              </div>
-              <div class="category-card-name">Pasture Eggs</div>
-              <div class="category-card-count">Farm Fresh</div>
-            </div>
-
-            <div class="category-card" onclick="window.location.href='pages/products.html?cat=Vegetables & Fruits'">
-              <div class="category-card-img">
-                <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=400&q=80" alt="">
-              </div>
-              <div class="category-card-name">Cold Juices</div>
-              <div class="category-card-count">Raw Pressed</div>
-            </div>
+          <div class="section-scrollbar-track">
+            <div class="section-scrollbar-thumb"></div>
           </div>
         </div>
       </section>
 
-      <section class="deals-section">
+      <section id="weekly-discounts" class="home-carousel-section">
         <div class="container">
-          <div class="deals-box">
-            <div class="deals-header">
-              <div>
-                <span class="section-subtitle" style="color: #d97706;">Limited Time Discounts</span>
-                <h2 class="section-title">Weekly Discounts & Deals</h2>
-              </div>
-              <div class="countdown-timer">
-                <span style="font-weight: 700; font-size: 0.85rem; color: var(--text-muted); margin-right: 6px;">Ends in:</span>
-                <div class="timer-box hours-box">14h</div>
-                <span>:</span>
-                <div class="timer-box mins-box">42m</div>
-                <span>:</span>
-                <div class="timer-box secs-box">19s</div>
-              </div>
+          <div class="section-header">
+            <h2 class="section-title">
+              <span class="section-title-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="9" y1="15" x2="15" y2="9"/><circle cx="9.5" cy="9.5" r="1"/><circle cx="14.5" cy="14.5" r="1"/></svg>
+              </span>
+              <span>Weekly Discounts</span>
+            </h2>
+            <a href="pages/products.html?cat=Beverages" class="section-link">All Products</a>
+          </div>
+          <div class="home-products-row grid-weekly-discounts"></div>
+          <div class="section-scrollbar-track">
+            <div class="section-scrollbar-thumb"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-carousel-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Vegetables & Fruits</h2>
+            <a href="pages/products.html?cat=Vegetables & Fruits" class="section-link">All Products</a>
+          </div>
+          <div class="home-products-row grid-home-veg"></div>
+          <div class="section-scrollbar-track">
+            <div class="section-scrollbar-thumb"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-carousel-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Seafood</h2>
+            <a href="pages/products.html?cat=Seafood" class="section-link">All Products</a>
+          </div>
+          <div class="home-products-row grid-home-seafood"></div>
+          <div class="section-scrollbar-track">
+            <div class="section-scrollbar-thumb"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-carousel-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Vegan Meat</h2>
+            <a href="pages/products.html?cat=Vegan Meat" class="section-link">All Products</a>
+          </div>
+          <div class="home-products-row grid-home-vegan"></div>
+          <div class="section-scrollbar-track">
+            <div class="section-scrollbar-thumb"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-editorial-section">
+        <div class="container">
+          <div class="seo-editorial-box">
+            <h2 class="seo-heading-green">Online Sports Nutrition and Natural Dietetics.</h2>
+            <p class="seo-paragraph">
+              Chances are there wasn't collaboration, communication, and checkpoints, there wasn't a process agreed upon or specified with the granularity required. It's content strategy gone awry right from the start. Forswearing the use of Lorem Ipsum wouldn't have helped, won't help now. It's like saying you're a bad designer, use less bold text, don't use italics in every other paragraph. True enough, but that's not all that it takes to get things back on track.
+            </p>
+            <h3 class="seo-subheading-dark">The villagers are out there with a vengeance to get that Frankenstein</h3>
+            <p class="seo-paragraph">
+              You made all the required mock ups for commissioned layout, got all the approvals, built a tested code base or had them built, you decided on a content management system, got a license for it or adapted:
+            </p>
+            <div class="seo-fade-wrap">
+              <ul class="seo-bullet-list">
+                <li>The toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business.</li>
+                <li>But what about your daily bread? Design comps, layouts, wireframes—will your clients accept that you go about things the facile way?</li>
+                <li>Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever.</li>
+                <li>Our organic farm partners harvest fresh vegetables, leafy greens, and plant-based proteins daily with full cold-chain delivery right to your kitchen door.</li>
+              </ul>
             </div>
-
-            <div class="deals-grid featured-deals-grid"></div>
+            <button type="button" class="seo-read-more-btn">Read More ⌄</button>
           </div>
-        </div>
-      </section>
-
-      <section class="container" style="padding: 32px 20px;">
-        <div class="section-header">
-          <div>
-            <span class="section-subtitle">Our Farm Selection</span>
-            <h2 class="section-title">Featured Products</h2>
-          </div>
-          <div class="tabs-wrapper home-product-tabs">
-            <button class="tab-btn active" data-category="all">All Products</button>
-            <button class="tab-btn" data-category="Vegetables & Fruits">Vegetables & Fruits</button>
-            <button class="tab-btn" data-category="Bakery">Bakery</button>
-            <button class="tab-btn" data-category="Seafood">Seafood</button>
-            <button class="tab-btn" data-category="Vegan Meat">Vegan Meat</button>
-          </div>
-        </div>
-
-        <div class="products-grid home-products-grid"></div>
-      </section>
-
-      <section class="container">
-        <div class="promo-grid">
-          <div class="promo-banner promo-banner-1">
-            <span class="hero-tag">Cold Pressed</span>
-            <h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 8px;">Greek Organic Olive Oil</h3>
-            <p style="font-size: 0.85rem; color: #d1fae5; margin-bottom: 20px;">Single estate Koroneiki extra virgin olive oil with less than 0.2% acidity.</p>
-            <a href="pages/products.html" class="btn btn-primary" style="width: fit-content;">Shop Virgin Oils →</a>
-          </div>
-
-          <div class="promo-banner promo-banner-2">
-            <span class="hero-tag" style="color: #f59e0b;">Freshly Baked Daily</span>
-            <h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 8px;">Wild Sourdough Country Loaf</h3>
-            <p style="font-size: 0.85rem; color: #fef3c7; margin-bottom: 20px;">Slow-fermented for 36 hours with non-GMO organic stoneground flour.</p>
-            <a href="pages/products.html?cat=Bakery" class="btn btn-primary" style="background-color: #d97706; width: fit-content;">Shop Bakery →</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="container">
-        <div class="newsletter-box">
-          <div>
-            <span class="hero-tag">Weekly Harvest Club</span>
-            <h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 6px;">Get $15 Off Your First Organic Basket!</h3>
-            <p style="font-size: 0.85rem; color: #d1fae5;">Subscribe for seasonal recipes, harvest alerts, and instant discount vouchers.</p>
-          </div>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); try { navigator.clipboard?.writeText('WOODMART15'); } catch(_) {} if (window.WoodMartStorage) { window.WoodMartStorage.showToast('Coupon code WOODMART15 copied to clipboard!'); } else { console.log('Coupon code WOODMART15'); } this.reset();">
-            <input type="email" required placeholder="Enter your email address..." class="newsletter-input">
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-          </form>
         </div>
       </section>
     </main>
@@ -339,60 +488,99 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-col">
-            <div class="logo" style="color: #ffffff; margin-bottom: 14px;">
-              <div class="logo-leaf">🌿</div>
-              <div>WOOD<span>MART</span></div>
-            </div>
-            <p style="font-size: 0.82rem; line-height: 1.7; margin-bottom: 16px;">
-              Your neighborhood certified organic grocery store. Direct partnerships with regenerative regional farms to guarantee uncompromised quality and absolute farm freshness.
+            <a href="index.html" class="logo">
+              <div class="logo-carrot-icon">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <path d="M22 6C22 6 25 3 28 5C26 8 23 9 23 9" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M20 8C20 8 19 3 22 2C24 5 22 8 22 8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M18.5 9.5C21.5 9.5 25.5 13.5 25.5 16.5C25.5 20.5 14 31 10 31C8.5 31 7 29.5 7 28C7 24 15.5 9.5 18.5 9.5Z" fill="#ffffff"/>
+                </svg>
+              </div>
+              <div class="logo-text-group">
+                <span class="logo-brand-title" style="color: #ffffff;">Woodmart.</span>
+                <span class="logo-brand-sub" style="color: rgba(255,255,255,0.9);">VEGETARIAN GROCERY</span>
+              </div>
+            </a>
+            <p class="footer-brand-desc">
+              From frozen veggie products to canned favorites such as beans to vegan alternatives, we have something for everyone.
             </p>
-            <div style="font-size: 0.8rem; line-height: 1.8;">
-              <div>📍 742 Evergreen Orchard Way, Valley Green, CA</div>
-              <div>📞 (+800) 1234 5678 (24/7 Customer Care)</div>
-            </div>
           </div>
 
           <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="pages/products.html">All Products</a></li>
-              <li><a href="pages/cart.html">Shopping Cart</a></li>
-              <li><a href="pages/wishlist.html">Wishlist</a></li>
-              <li><a href="pages/products.html?cat=Vegetables & Fruits">Fresh Vegetables</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Categories</h4>
+            <h4>Popular Categories</h4>
             <ul class="footer-links">
               <li><a href="pages/products.html?cat=Vegetables & Fruits">Vegetables & Fruits</a></li>
-              <li><a href="pages/products.html?cat=Bakery">Bakery & Bread</a></li>
-              <li><a href="pages/products.html?cat=Seafood">Wild Seafood</a></li>
-              <li><a href="pages/products.html?cat=Vegan Meat">Plant-Based Meat</a></li>
+              <li><a href="pages/products.html?cat=Seafood">Seafood</a></li>
+              <li><a href="pages/products.html?cat=Dairy">Dairy</a></li>
+              <li><a href="pages/products.html?cat=Seafood&sub=Fresh Fish">Fresh Fish</a></li>
+              <li><a href="pages/products.html?cat=Vegetables & Fruits&sub=Mushrooms">Mushrooms</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h4>Certified Organic</h4>
-            <div style="font-size: 0.82rem; line-height: 1.7;">
-              <p style="margin-bottom: 10px;">✓ 100% USDA Certified Organic</p>
-              <p style="margin-bottom: 10px;">✓ Non-GMO Project Verified</p>
-              <p>✓ Temperature-controlled cold chain dispatch</p>
+            <h4>Useful Links</h4>
+            <ul class="footer-links">
+              <li><a href="pages/products.html">About Us</a></li>
+              <li><a href="pages/products.html">Contact Us</a></li>
+              <li><a href="pages/products.html">Delivery</a></li>
+              <li><a href="pages/products.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Available On:</h4>
+            <div class="store-badges-row">
+              <a href="#newsletter" class="store-badge-btn store-badge-dark">
+                <span>▶</span>
+                <div>
+                  <div style="font-size: 0.55rem; opacity: 0.8;">GET IT ON</div>
+                  <div style="font-weight: 700;">Google Play</div>
+                </div>
+              </a>
+              <a href="#newsletter" class="store-badge-btn store-badge-light">
+                <span></span>
+                <div>
+                  <div style="font-size: 0.55rem; opacity: 0.7;">Download on the</div>
+                  <div style="font-weight: 700;">App Store</div>
+                </div>
+              </a>
+            </div>
+            <h4>Social links:</h4>
+            <div class="social-circles-row">
+              <a href="#newsletter" class="social-circle-link social-fb">f</a>
+              <a href="#newsletter" class="social-circle-link social-x">𝕏</a>
             </div>
           </div>
         </div>
 
+        <div id="newsletter" class="footer-newsletter-bar">
+          <div class="footer-newsletter-text">
+            <h3>Sign Up To Our Newsletter</h3>
+            <p>Be the First to Know. Sign up to newsletter today</p>
+          </div>
+          <div class="footer-newsletter-art">
+            <span>🥑</span>
+            <span>🍌</span>
+            <span>🥝</span>
+          </div>
+          <form class="footer-newsletter-form newsletter-form">
+            <input type="email" required placeholder="Your email address" class="footer-newsletter-input">
+            <button type="submit" class="footer-newsletter-submit">Sign Up</button>
+          </form>
+        </div>
+
         <div class="footer-bottom">
-          <div>© 2026 WoodMart Vegetables. All Rights Reserved.</div>
-          <div style="display: flex; gap: 12px;">
-            <span>VISA</span>
-            <span>Mastercard</span>
-            <span>PayPal</span>
-            <span>Apple Pay</span>
+          <div><strong>WoodMart</strong> theme 2026 <strong>WooCommerce Themes</strong>.</div>
+          <div class="footer-bottom-links">
+            <a href="pages/products.html">Terms Of Service</a>
+            <a href="pages/products.html">Privacy Policy</a>
+            <a href="pages/products.html">Store Refund Policy</a>
           </div>
         </div>
       </div>
     </footer>
+
+    <button class="scroll-top-float" aria-label="Scroll to top">⌃</button>
 
     <div class="cart-drawer-overlay"></div>
     <div class="cart-drawer">
@@ -413,42 +601,22 @@
       </div>
     </div>
 
-    <div class="mobile-menu-drawer">
-      <div class="mobile-menu-header">
-        <div class="logo">
-          <div class="logo-leaf">🌿</div>
-          <div>WOOD<span>MART</span></div>
-        </div>
-        <button class="mobile-menu-close">✕</button>
-      </div>
-      <ul class="mobile-menu-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pages/products.html">All Shop Products</a></li>
-        <li><a href="pages/products.html?cat=Vegetables & Fruits">Vegetables & Fruits</a></li>
-        <li><a href="pages/products.html?cat=Bakery">Bakery</a></li>
-        <li><a href="pages/products.html?cat=Seafood">Seafood</a></li>
-        <li><a href="pages/products.html?cat=Vegan Meat">Vegan Meat</a></li>
-        <li><a href="pages/wishlist.html">Wishlist</a></li>
-        <li><a href="pages/cart.html">Shopping Cart</a></li>
-      </ul>
-    </div>
-
     <div class="mobile-bottom-bar">
       <div class="mobile-bottom-bar-inner">
         <a href="index.html" class="mobile-bar-btn active">
-          <span class="icon">🏠</span>
+          <span>🏠</span>
           <span>Home</span>
         </a>
         <a href="pages/products.html" class="mobile-bar-btn">
-          <span class="icon">🔍</span>
+          <span>🔍</span>
           <span>Shop</span>
         </a>
         <a href="pages/wishlist.html" class="mobile-bar-btn">
-          <span class="icon">🤍</span>
+          <span>🤍</span>
           <span>Wishlist</span>
         </a>
         <button class="mobile-bar-btn header-cart-trigger">
-          <span class="icon">🛒</span>
+          <span>🛒</span>
           <span>Cart</span>
         </button>
       </div>
@@ -463,81 +631,29 @@
       import { ProductsRenderer } from './src/js/products.js';
       import { PRODUCTS } from './src/data/products.js';
 
-      window.WoodMartStorage = Storage;
-
       function initHome() {
         Cart.init();
         Wishlist.init();
         Menu.init();
+        Search.init(PRODUCTS);
 
-        try {
-          const products = PRODUCTS;
+        const weeklyGrid = document.querySelector('.grid-weekly-discounts');
+        const vegGrid = document.querySelector('.grid-home-veg');
+        const seafoodGrid = document.querySelector('.grid-home-seafood');
+        const veganGrid = document.querySelector('.grid-home-vegan');
 
-          Search.init(products);
+        ProductsRenderer.renderGrid(weeklyGrid, PRODUCTS.filter(p => p.isWeeklyDiscount).slice(0, 6));
+        ProductsRenderer.renderGrid(vegGrid, PRODUCTS.filter(p => p.isHomeVeg).slice(0, 6));
+        ProductsRenderer.renderGrid(seafoodGrid, PRODUCTS.filter(p => p.category === 'Seafood').slice(0, 6));
+        ProductsRenderer.renderGrid(veganGrid, PRODUCTS.filter(p => p.category === 'Vegan Meat').slice(0, 6));
 
-          const gridContainer = document.querySelector('.home-products-grid');
-          ProductsRenderer.renderGrid(gridContainer, products.slice(0, 8));
-
-          const tabs = document.querySelectorAll('.home-product-tabs .tab-btn');
-          tabs.forEach(btn => {
-            btn.addEventListener('click', () => {
-              tabs.forEach(b => b.classList.remove('active'));
-              btn.classList.add('active');
-              const cat = btn.dataset.category;
-              const filtered = cat === 'all' ? products : products.filter(p => p.category === cat);
-              ProductsRenderer.renderGrid(gridContainer, filtered.slice(0, 8));
-            });
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+          newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            Storage.showToast('Thank you for subscribing to our newsletter!');
+            newsletterForm.reset();
           });
-
-          const dealsContainer = document.querySelector('.featured-deals-grid');
-          if (dealsContainer) {
-            const onSale = products.filter(p => p.oldPrice).slice(0, 2);
-            dealsContainer.innerHTML = onSale.map(p => `
-              <div class="deal-card" onclick="window.location.href='pages/product.html?id=${p.id}'" style="cursor: pointer;">
-                <img src="${p.images[0]}" alt="${p.name}">
-                <div class="deal-card-content">
-                  <div>
-                    <span style="font-size: 0.72rem; color: var(--text-light); text-transform: uppercase;">${p.category}</span>
-                    <h3 style="font-size: 1.1rem; font-weight: 800; margin: 4px 0 8px 0;">${p.name}</h3>
-                    <div class="stars">${'★'.repeat(Math.floor(p.rating))} <span style="font-size: 0.75rem; color: var(--text-light);">(${p.reviewCount})</span></div>
-                    <div style="margin: 10px 0;">
-                      <span class="price">$${p.price.toFixed(2)}</span>
-                      <span class="price-old">$${p.oldPrice.toFixed(2)}</span>
-                    </div>
-                    <div class="progress-bar">
-                      <div class="progress-bar-fill" style="width: 70%;"></div>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
-                      <span>Already Sold: <strong>68</strong></span>
-                      <span>Available: <strong style="color: var(--primary);">${p.stock}</strong></span>
-                    </div>
-                  </div>
-                  <button class="btn btn-primary" onclick="event.stopPropagation(); window.WoodMartCart.addItem(window.WoodMartProducts.find(x => x.id === ${p.id}), 1);" style="margin-top: 14px;">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            `).join('');
-
-            window.WoodMartProducts = products;
-            window.WoodMartCart = Cart;
-          }
-
-          let h = 14, m = 42, s = 19;
-          setInterval(() => {
-            if (s > 0) s--;
-            else if (m > 0) { m--; s = 59; }
-            else if (h > 0) { h--; m = 59; s = 59; }
-            const hBox = document.querySelector('.hours-box');
-            const mBox = document.querySelector('.mins-box');
-            const sBox = document.querySelector('.secs-box');
-            if (hBox) hBox.textContent = `${h}h`;
-            if (mBox) mBox.textContent = `${m}m`;
-            if (sBox) sBox.textContent = `${s}s`;
-          }, 1000);
-
-        } catch (e) {
-          console.error('Failed to initialize home page', e);
         }
       }
 

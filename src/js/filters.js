@@ -3,15 +3,13 @@ import { ProductsRenderer } from './products.js';
 export const Filters = {
   state: {
     category: 'all',
-    maxPrice: 20,
-    inStockOnly: false,
-    onSaleOnly: false,
-    veganOnly: false,
-    organicOnly: false,
-    weights: [],
+    subcategory: 'all',
+    maxPrice: 130,
+    brands: [],
+    countries: [],
     sortBy: 'featured',
-    layout: 'grid',
-    visibleCount: 12
+    layout: 'grid-4',
+    visibleCount: 20
   },
 
   allProducts: [],
@@ -21,85 +19,121 @@ export const Filters = {
 
     const urlParams = new URLSearchParams(window.location.search);
     const catParam = urlParams.get('cat');
+    const subParam = urlParams.get('sub');
     const qParam = urlParams.get('q');
 
     if (catParam && catParam !== 'all') {
       this.state.category = catParam;
     }
+    if (subParam && subParam !== 'all') {
+      this.state.subcategory = subParam;
+    }
     if (qParam) {
       this.state.searchQuery = qParam.toLowerCase();
     }
 
+    this.syncActiveCategoryUI();
     this.bindEvents();
     this.applyFilters();
+  },
+
+  syncActiveCategoryUI() {
+    const pageTitle = document.querySelector('.page-main-heading');
+    const breadcrumbCurrent = document.querySelector('.breadcrumb .current');
+    const label = this.state.subcategory !== 'all'
+      ? this.state.subcategory
+      : (this.state.category !== 'all' ? this.state.category : 'Vegetables & Fruits');
+
+    if (pageTitle) pageTitle.textContent = label;
+    if (breadcrumbCurrent) breadcrumbCurrent.textContent = label;
+
+    document.querySelectorAll('.filter-cat-btn').forEach(btn => {
+      const isMatch = btn.dataset.category.toLowerCase() === this.state.category.toLowerCase() ||
+        (this.state.category === 'all' && btn.dataset.category === 'Vegetables & Fruits');
+      btn.classList.toggle('active', isMatch);
+    });
+
+    document.querySelectorAll('.subcat-pill-card, .filter-subcat-btn').forEach(el => {
+      const sub = el.dataset.subcategory;
+      el.classList.toggle('active', sub && sub.toLowerCase() === this.state.subcategory.toLowerCase());
+    });
   },
 
   bindEvents() {
     const catButtons = document.querySelectorAll('.filter-cat-btn');
     catButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        catButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+      btn.addEventListener('click', () => {
         this.state.category = btn.dataset.category;
-        this.state.visibleCount = 12;
+        this.state.subcategory = 'all';
+        delete this.state.searchQuery;
+        this.syncActiveCategoryUI();
+        this.applyFilters();
+      });
+    });
+
+    const subcatButtons = document.querySelectorAll('.subcat-pill-card, .filter-subcat-btn');
+    subcatButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const clickedSub = btn.dataset.subcategory;
+        if (this.state.subcategory === clickedSub) {
+          this.state.subcategory = 'all';
+        } else {
+          this.state.category = 'Vegetables & Fruits';
+          this.state.subcategory = clickedSub;
+        }
+        this.syncActiveCategoryUI();
         this.applyFilters();
       });
     });
 
     const priceSlider = document.querySelector('.price-range-slider');
     const priceDisplay = document.querySelector('.current-max-price');
+    const filterPriceBtn = document.querySelector('.btn-filter-price');
 
     if (priceSlider) {
       priceSlider.addEventListener('input', (e) => {
         this.state.maxPrice = parseFloat(e.target.value);
-        if (priceDisplay) priceDisplay.textContent = `$${this.state.maxPrice.toFixed(2)}`;
-        this.applyFilters();
+        if (priceDisplay) priceDisplay.textContent = `$${this.state.maxPrice}`;
+      });
+      priceSlider.addEventListener('change', () => this.applyFilters());
+    }
+
+    if (filterPriceBtn) {
+      filterPriceBtn.addEventListener('click', () => this.applyFilters());
+    }
+
+    const brandSearchInput = document.querySelector('.brand-search-input');
+    if (brandSearchInput) {
+      brandSearchInput.addEventListener('input', (e) => {
+        const q = e.target.value.trim().toLowerCase();
+        document.querySelectorAll('.brand-filter-row').forEach(row => {
+          const brandName = (row.dataset.brandName || '').toLowerCase();
+          row.style.display = brandName.includes(q) ? 'flex' : 'none';
+        });
       });
     }
 
-    const inStockCheck = document.querySelector('#filter-in-stock');
-    if (inStockCheck) {
-      inStockCheck.addEventListener('change', (e) => {
-        this.state.inStockOnly = e.target.checked;
+    document.querySelectorAll('.brand-checkbox').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const checked = Array.from(document.querySelectorAll('.brand-checkbox:checked')).map(el => el.value);
+        this.state.brands = checked;
         this.applyFilters();
       });
-    }
+    });
 
-    const onSaleCheck = document.querySelector('#filter-on-sale');
-    if (onSaleCheck) {
-      onSaleCheck.addEventListener('change', (e) => {
-        this.state.onSaleOnly = e.target.checked;
+    document.querySelectorAll('.country-checkbox').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const checked = Array.from(document.querySelectorAll('.country-checkbox:checked')).map(el => el.value);
+        this.state.countries = checked;
         this.applyFilters();
       });
-    }
+    });
 
-    const organicCheck = document.querySelector('#filter-organic');
-    if (organicCheck) {
-      organicCheck.addEventListener('change', (e) => {
-        this.state.organicOnly = e.target.checked;
-        this.applyFilters();
-      });
-    }
-
-    const veganCheck = document.querySelector('#filter-vegan');
-    if (veganCheck) {
-      veganCheck.addEventListener('change', (e) => {
-        this.state.veganOnly = e.target.checked;
-        this.applyFilters();
-      });
-    }
-
-    const weightButtons = document.querySelectorAll('.weight-btn');
-    weightButtons.forEach(btn => {
+    document.querySelectorAll('.per-page-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const weight = btn.dataset.weight;
-        if (this.state.weights.includes(weight)) {
-          this.state.weights = this.state.weights.filter(w => w !== weight);
-          btn.classList.remove('active');
-        } else {
-          this.state.weights.push(weight);
-          btn.classList.add('active');
-        }
+        document.querySelectorAll('.per-page-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        this.state.visibleCount = parseInt(btn.dataset.count, 10) || 20;
         this.applyFilters();
       });
     });
@@ -112,63 +146,26 @@ export const Filters = {
       });
     }
 
-    const viewGrid = document.querySelector('.view-grid-btn');
     const viewList = document.querySelector('.view-list-btn');
+    const viewGrid3 = document.querySelector('.view-grid3-btn');
+    const viewGrid4 = document.querySelector('.view-grid4-btn');
+    const gridEl = document.querySelector('.products-grid');
 
-    if (viewGrid && viewList) {
-      viewGrid.addEventListener('click', () => {
-        this.state.layout = 'grid';
-        viewGrid.classList.add('active');
-        viewList.classList.remove('active');
-        this.applyFilters();
-      });
+    const setViewMode = (mode) => {
+      this.state.layout = mode;
+      [viewList, viewGrid3, viewGrid4].forEach(b => b?.classList.remove('active'));
+      if (mode === 'list') viewList?.classList.add('active');
+      if (mode === 'grid-3') viewGrid3?.classList.add('active');
+      if (mode === 'grid-4') viewGrid4?.classList.add('active');
+      if (gridEl) {
+        gridEl.classList.toggle('cols-3', mode === 'grid-3');
+      }
+      this.applyFilters();
+    };
 
-      viewList.addEventListener('click', () => {
-        this.state.layout = 'list';
-        viewList.classList.add('active');
-        viewGrid.classList.remove('active');
-        this.applyFilters();
-      });
-    }
-
-    const resetBtn = document.querySelector('.reset-filters-btn');
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
-        this.state.category = 'all';
-        this.state.maxPrice = 20;
-        this.state.inStockOnly = false;
-        this.state.onSaleOnly = false;
-        this.state.veganOnly = false;
-        this.state.organicOnly = false;
-        this.state.weights = [];
-        this.state.sortBy = 'featured';
-        this.state.visibleCount = 12;
-        delete this.state.searchQuery;
-
-        if (priceSlider) priceSlider.value = 20;
-        if (priceDisplay) priceDisplay.textContent = '$20.00';
-        if (inStockCheck) inStockCheck.checked = false;
-        if (onSaleCheck) onSaleCheck.checked = false;
-        if (organicCheck) organicCheck.checked = false;
-        if (veganCheck) veganCheck.checked = false;
-        catButtons.forEach(b => {
-          if (b.dataset.category === 'all') b.classList.add('active');
-          else b.classList.remove('active');
-        });
-        weightButtons.forEach(b => b.classList.remove('active'));
-        if (sortSelect) sortSelect.value = 'featured';
-
-        this.applyFilters();
-      });
-    }
-
-    const loadMoreBtn = document.querySelector('.load-more-btn');
-    if (loadMoreBtn) {
-      loadMoreBtn.addEventListener('click', () => {
-        this.state.visibleCount += 6;
-        this.applyFilters();
-      });
-    }
+    viewList?.addEventListener('click', () => setViewMode('list'));
+    viewGrid3?.addEventListener('click', () => setViewMode('grid-3'));
+    viewGrid4?.addEventListener('click', () => setViewMode('grid-4'));
   },
 
   applyFilters() {
@@ -176,27 +173,20 @@ export const Filters = {
       if (this.state.category !== 'all' && item.category.toLowerCase() !== this.state.category.toLowerCase()) {
         return false;
       }
+      if (this.state.subcategory !== 'all' && (!item.subcategory || item.subcategory.toLowerCase() !== this.state.subcategory.toLowerCase())) {
+        return false;
+      }
       if (item.price > this.state.maxPrice) {
         return false;
       }
-      if (this.state.inStockOnly && item.stock <= 0) {
+      if (this.state.brands.length > 0 && !this.state.brands.includes(item.brand)) {
         return false;
       }
-      if (this.state.onSaleOnly && !item.oldPrice) {
+      if (this.state.countries.length > 0 && !this.state.countries.includes(item.country)) {
         return false;
-      }
-      if (this.state.organicOnly && !item.isOrganic) {
-        return false;
-      }
-      if (this.state.veganOnly && !item.isVegan) {
-        return false;
-      }
-      if (this.state.weights.length > 0) {
-        const matchesWeight = this.state.weights.some(w => item.weight.toLowerCase().includes(w.toLowerCase()));
-        if (!matchesWeight) return false;
       }
       if (this.state.searchQuery) {
-        const text = `${item.name} ${item.description} ${item.category}`.toLowerCase();
+        const text = `${item.name} ${item.description} ${item.category} ${item.subcategory || ''}`.toLowerCase();
         if (!text.includes(this.state.searchQuery)) return false;
       }
       return true;
@@ -212,18 +202,15 @@ export const Filters = {
 
     const countEl = document.querySelector('.shop-result-count');
     if (countEl) {
-      countEl.textContent = `Showing ${Math.min(result.length, this.state.visibleCount)} of ${result.length} products`;
-    }
-
-    const loadMoreBtn = document.querySelector('.load-more-btn');
-    if (loadMoreBtn) {
-      loadMoreBtn.style.display = result.length > this.state.visibleCount ? 'inline-block' : 'none';
+      const shown = Math.min(result.length, this.state.visibleCount);
+      countEl.textContent = `Showing 1–${shown} of ${result.length} results`;
     }
 
     const container = document.querySelector('.products-grid');
     if (container) {
       const itemsToRender = result.slice(0, this.state.visibleCount);
-      ProductsRenderer.renderGrid(container, itemsToRender, this.state.layout);
+      const cardLayout = this.state.layout === 'list' ? 'list' : 'grid';
+      ProductsRenderer.renderGrid(container, itemsToRender, cardLayout);
     }
   }
 };
